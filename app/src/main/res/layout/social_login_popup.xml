@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/popup">
+
+    <TextView
+        android:id="@+id/textClose"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/cancle_btn"
+        android:text="X"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:textSize="15sp"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Continue With Gmail"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:background="@drawable/login_socialmedia"
+        app:drawableLeftCompat="@drawable/google_icon"
+        android:paddingLeft="15dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Continue With Facebook"
+        android:paddingLeft="15dp"
+        android:textSize="12sp"
+        android:background="@drawable/login_socialmedia"
+        app:drawableLeftCompat="@drawable/facebook_icon" />
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/btn_twitter"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textSize="12sp"-->
+<!--        android:text="Continue With Twitter"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:background="@drawable/login_socialmedia"-->
+<!--        app:drawableLeftCompat="@drawable/twitter_icon" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/btn_instagram"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textSize="12sp"-->
+<!--        android:text="Continue With Instagram"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:background="@drawable/login_socialmedia"-->
+<!--        app:drawableLeftCompat="@drawable/instagram_icon" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/btn_linkedin"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textSize="12sp"-->
+<!--        android:paddingLeft="15dp"-->
+<!--        android:text="Continue With LinkedIn"-->
+<!--        android:background="@drawable/login_socialmedia"-->
+<!--        app:drawableLeftCompat="@drawable/linkedin_icon" />-->
+</LinearLayout>

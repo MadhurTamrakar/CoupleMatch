@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReligionActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/Btn_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/religion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Religion"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_hindu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Hindu"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_muslim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_muslim"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Muslim"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sikh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hindu" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sikh"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Sikh"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_christian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_muslim" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_christian"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="christian"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_buddhist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sikh" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_buddhist"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="buddhist"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_jewish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_christian" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_jewish"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="jewish"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_parsi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_buddhist" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_parsi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="parsi"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_atheist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_jewish" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_atheist"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Atheist"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_non_religious"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_parsi" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_non_religious"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="Non Religious"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_other"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_atheist" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_other"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="other"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_non_religious" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MaritalStatusActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/Btn_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/marital_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="MARITAL STATUS"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_unmarried"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="unmarried"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_divorced"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_divorced"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="divorced"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_DIVORCED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_unmarried" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_DIVORCED"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="DIVORCED WITH CHILDREN"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_WIDOWED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_divorced" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_WIDOWED"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="WIDOWED"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_WIDOWED_WITH_CHILDREN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_DIVORCED" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_WIDOWED_WITH_CHILDREN"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="WIDOWED WITH CHILDREN"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_SEPARATED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_WIDOWED" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_SEPARATED"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="SEPARATED"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ANNULLED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_WIDOWED_WITH_CHILDREN" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ANNULLED"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="ANNULLED"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_MARRIED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_SEPARATED" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_MARRIED"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="MARRIED"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_AWAITING"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ANNULLED" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_AWAITING"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_selected"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:text="AWAITING DIVORCE"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_MARRIED" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
