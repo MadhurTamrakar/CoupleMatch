@@ -3,13 +3,17 @@ package com.example.couplematch.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Message {
+public class Result2 {
+
     @SerializedName("id")
     @Expose
     private String id;
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("user_code")
+    @Expose
+    private String userCode;
     @SerializedName("profile1")
     @Expose
     private String profile1;
@@ -39,40 +43,40 @@ public class Message {
     private String dob;
     @SerializedName("religion")
     @Expose
-    private String religion;
+    private Object religion;
     @SerializedName("dosh")
     @Expose
-    private String dosh;
+    private Object dosh;
     @SerializedName("marital_status")
     @Expose
-    private String maritalStatus;
+    private Object maritalStatus;
     @SerializedName("diet")
     @Expose
-    private String diet;
+    private Object diet;
     @SerializedName("height")
     @Expose
-    private String height;
+    private Object height;
     @SerializedName("education")
     @Expose
-    private String education;
+    private Object education;
     @SerializedName("profession")
     @Expose
-    private String profession;
+    private Object profession;
     @SerializedName("location")
     @Expose
-    private String location;
+    private Object location;
     @SerializedName("lat")
     @Expose
-    private String lat;
+    private Object lat;
     @SerializedName("lon")
     @Expose
-    private String lon;
+    private Object lon;
     @SerializedName("about_me")
     @Expose
-    private String aboutMe;
+    private Object aboutMe;
     @SerializedName("partner_preference")
     @Expose
-    private String partnerPreference;
+    private Object partnerPreference;
     @SerializedName("age")
     @Expose
     private Object age;
@@ -101,7 +105,6 @@ public class Message {
     @Expose
     private String dateTime;
 
-
     public String getId() {
         return id;
     }
@@ -116,6 +119,14 @@ public class Message {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 
     public String getProfile1() {
@@ -190,99 +201,99 @@ public class Message {
         this.dob = dob;
     }
 
-    public String getReligion(String religion) {
-        return this.religion;
+    public Object getReligion() {
+        return religion;
     }
 
-    public void setReligion(String religion) {
+    public void setReligion(Object religion) {
         this.religion = religion;
     }
 
-    public String getDosh(String dosh) {
-        return this.dosh;
+    public Object getDosh() {
+        return dosh;
     }
 
-    public void setDosh(String dosh) {
+    public void setDosh(Object dosh) {
         this.dosh = dosh;
     }
 
-    public String getMaritalStatus(String maritalStatus) {
-        return this.maritalStatus;
+    public Object getMaritalStatus() {
+        return maritalStatus;
     }
 
-    public void setMaritalStatus(String maritalStatus) {
+    public void setMaritalStatus(Object maritalStatus) {
         this.maritalStatus = maritalStatus;
     }
 
-    public String getDiet(String diet) {
-        return this.diet;
+    public Object getDiet() {
+        return diet;
     }
 
-    public void setDiet(String diet) {
+    public void setDiet(Object diet) {
         this.diet = diet;
     }
 
-    public String getHeight(String height) {
-        return this.height;
+    public Object getHeight() {
+        return height;
     }
 
-    public void setHeight(String height) {
+    public void setHeight(Object height) {
         this.height = height;
     }
 
-    public String getEducation(String education) {
-        return this.education;
+    public Object getEducation() {
+        return education;
     }
 
-    public void setEducation(String education) {
+    public void setEducation(Object education) {
         this.education = education;
     }
 
-    public String getProfession(String professional) {
+    public Object getProfession() {
         return profession;
     }
 
-    public void setProfession(String profession) {
+    public void setProfession(Object profession) {
         this.profession = profession;
     }
 
-    public String getLocation(String location) {
-        return this.location;
+    public Object getLocation() {
+        return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Object location) {
         this.location = location;
     }
 
-    public String getLat() {
+    public Object getLat() {
         return lat;
     }
 
-    public void setLat(String lat) {
+    public void setLat(Object lat) {
         this.lat = lat;
     }
 
-    public String getLon() {
+    public Object getLon() {
         return lon;
     }
 
-    public void setLon(String lon) {
+    public void setLon(Object lon) {
         this.lon = lon;
     }
 
-    public String getAboutMe(String about_yourself) {
+    public Object getAboutMe() {
         return aboutMe;
     }
 
-    public void setAboutMe(String aboutMe) {
+    public void setAboutMe(Object aboutMe) {
         this.aboutMe = aboutMe;
     }
 
-    public String getPartnerPreference(String about_partner) {
+    public Object getPartnerPreference() {
         return partnerPreference;
     }
 
-    public void setPartnerPreference(String partnerPreference) {
+    public void setPartnerPreference(Object partnerPreference) {
         this.partnerPreference = partnerPreference;
     }
 

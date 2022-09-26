@@ -1,5 +1,7 @@
 package com.example.couplematch.adapter;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,26 +11,44 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.couplematch.R;
+import com.example.couplematch.model.UserData;
+
+import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-    int []arr;
-    public Adapter(int[] arr) {
-        this.arr = arr;
+//    int []arr;
+//    public Adapter(int[] arr) {
+//        this.arr = arr;
+//    }
+    Context context;
+    List<UserData> userData;
+
+    public Adapter(Context context, List<UserData> userData){
+        this.userData = userData;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from (parent.getContext ()).inflate(R.layout.card_gride_layout, parent, false);
+        View view = LayoutInflater.from (context).inflate(R.layout.card_gride_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder (view);
         return viewHolder;
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.Image_View.setImageResource (arr[position]);
+        holder.tv_name.setText (userData.get (position).getName ());
+        holder.tv_age.setText (userData.get (position).getAge ().toString ());
+        Glide.with (context)
+            .load (userData.get (position).getProfile1 ())
+//            .placeholder (R.drawable.download2)
+//            .error(R.drawable.ic_launcher_background)
+            .into (holder.Image_View);
 //        holder.detailTitle.setText (position);
 //        holder.detailTitle2.setText (position);
 
@@ -36,7 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return arr.length;
+        return userData.size ();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Welcom_Splash_Activity">
+    tools:context=".Welcome_Splash_Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -66,17 +66,32 @@
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Your Couplematch ID is F1001 \n anchal@gmail.com"
+            android:text="Welcome, xyz "
             android:textColor="#86000000"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView17"/>
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Your Couplematch ID is F1001 "
+            android:textColor="#86000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

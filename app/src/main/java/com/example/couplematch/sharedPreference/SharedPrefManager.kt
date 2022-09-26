@@ -1,13 +1,13 @@
 package com.example.couplematch.sharedPreference
 
 import android.app.Activity
-import android.content.Context
 import android.content.SharedPreferences
-import com.example.couplematch.model.Message
 
 class SharedPrefManager(activity: Activity) {
 
     private val API_URL = "Id"
+    private val USER = "Name"
+    private val USERCODE = "UserCode"
 
     private var editor: SharedPreferences.Editor? = null
 
@@ -25,5 +25,21 @@ class SharedPrefManager(activity: Activity) {
 
     fun getId(): String? {
         return pref?.getString(API_URL, API_URL)
+    }
+
+    fun setUserCode(state: String) {
+        editor?.putString(USERCODE, state)?.apply()
+    }
+
+    fun getUserCode(): String? {
+        return pref?.getString(USERCODE, USERCODE)
+    }
+
+    fun setString(state: String){
+        editor?.putString(USER, state)?.apply()
+    }
+
+    fun getString(): String? {
+        return pref?.getString(USER, USER)
     }
 }

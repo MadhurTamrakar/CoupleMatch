@@ -71,7 +71,7 @@
 
         </activity>
         <activity
-            android:name=".Welcom_Splash_Activity"
+            android:name=".Welcome_Splash_Activity"
             android:exported="false" />
         <activity
             android:name=".LocationActivity"
@@ -105,17 +105,17 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+
         </activity>
 
         <activity

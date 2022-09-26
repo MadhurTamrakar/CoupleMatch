@@ -137,6 +137,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image5" />
 
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="(Note: Please Update All The 6 Images)"
+            android:textColor="#F19191"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Continue_btn"
             android:layout_width="match_parent"
@@ -151,7 +164,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/note" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

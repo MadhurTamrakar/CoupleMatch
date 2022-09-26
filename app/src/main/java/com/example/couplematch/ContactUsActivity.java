@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class ContactUsActivity extends AppCompatActivity {
 
     TextView Btn_back;
     ImageView map;
+    ImageButton mail_box;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class ContactUsActivity extends AppCompatActivity {
 
         Btn_back = findViewById (R.id.Btn_back);
         map = findViewById (R.id.map);
+        mail_box = findViewById (R.id.mail_box);
 
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
@@ -38,6 +41,20 @@ public class ContactUsActivity extends AppCompatActivity {
                 openMap();
             }
         });
+
+        mail_box.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                open();
+            }
+        });
+    }
+
+    private void open() {
+        Intent sendIntent = new Intent (Intent.ACTION_SEND);
+        sendIntent.setType ("text/path");
+        sendIntent.putExtra (Intent.EXTRA_EMAIL, new String[]{"couplematch.in@gmail.com"});
+        startActivity (sendIntent);
     }
 
     private void openMap() {

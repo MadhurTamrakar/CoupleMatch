@@ -68,11 +68,11 @@ public class SignupActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                String name = editText.getText ().toString ().trim ();
+                String name = editText.getText ().toString ();
                 String mobile = ed_number.getText ().toString ().trim ();
                 String dob = dateButton.getText ().toString ().trim ();
 
+                sharedPrefManager.setString (name);
                 final String gender;
                 gender = male_tv.getText ().toString ().trim (); female_tv.getText ().toString ().trim ();
 
@@ -83,6 +83,7 @@ public class SignupActivity extends AppCompatActivity {
                     ed_number.setError ("Enter Correct Phone Number");
                 } else {
                     startActivity (new Intent (SignupActivity.this, ReligionActivity.class));
+
                 }
                 registerUser (name, mobile, gender, dob);
             }
@@ -97,6 +98,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onResponse(Call<SignUpResponse> responseCall, Response<SignUpResponse> response) {
                 if (response.isSuccessful ()) {
                     sharedPrefManager.setId (response.body ().getResult ().getId ());
+
 //                    String message = "Register Successfully";
 //                    Toast.makeText (SignupActivity.this, message, Toast.LENGTH_SHORT).show ();
 //                    startActivity (new Intent (SignupActivity.this, ReligionActivity.class));

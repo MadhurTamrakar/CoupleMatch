@@ -33,7 +33,6 @@ public class AboutActivity extends AppCompatActivity {
         setContentView (R.layout.activity_about);
         sharedPrefManager = new SharedPrefManager (this);
 
-
         Religion = getIntent ().getStringExtra ("Religion");
         Dosh = getIntent ().getStringExtra ("Dosh");
         MaritalStatus = getIntent ().getStringExtra ("MaritalStatus");
@@ -59,6 +58,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String user_id = sharedPrefManager.getId ();
+                String user_code = null;
                 String religion = Religion;
                 String dosh = Dosh;
                 String maritalstatus = MaritalStatus;
@@ -70,19 +70,19 @@ public class AboutActivity extends AppCompatActivity {
                 String about_me = editText_about.getText ().toString ().trim ();
                 String partner_preference = editText_partner.getText ().toString ().trim ();
 
-                profileUpdate (user_id, religion, dosh, maritalstatus, diet, height, education, profession, location, about_me, partner_preference);
+                profileUpdate (user_id, user_code, religion, dosh, maritalstatus, diet, height, education, profession, location, about_me, partner_preference);
             }
         });
     }
 
-    private void profileUpdate(String user_id, String religion, String dosh, String maritalstatus, String diet, String height, String education, String profession, String location, String about_me, String partner_preference) {
+    private void profileUpdate(String user_id, String user_code, String religion, String dosh, String maritalstatus, String diet, String height, String education, String profession, String location, String about_me, String partner_preference) {
         UserService apiService = ApiService.getService ();
-        Call<UpdateProfileResponse> Call = apiService.UpdateProfile (user_id, religion, dosh, maritalstatus, diet, height, education, profession, location, about_me, partner_preference);
+        Call<UpdateProfileResponse> Call = apiService.UpdateProfile (user_id, user_code, religion, dosh, maritalstatus, diet, height, education, profession, location, about_me, partner_preference);
         Call.enqueue (new Callback<UpdateProfileResponse> () {
             @Override
             public void onResponse(Call<UpdateProfileResponse> responseCall, Response<UpdateProfileResponse> response) {
                 if (response.isSuccessful ()) {
-//                    sharedPrefManager.setId (user_id);
+                    sharedPrefManager.setUserCode (response.body ().getResult2 ().getUserCode ());
                     startActivity (new Intent (AboutActivity.this, Add_Photo_Activity.class));
                     finish ();
                 } else {}
