@@ -1,20 +1,19 @@
 package com.example.couplematch;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +21,17 @@ import com.example.couplematch.UserInterface.UserService;
 import com.example.couplematch.response.SignUpResponse;
 import com.example.couplematch.service.ApiService;
 import com.example.couplematch.sharedPreference.SharedPrefManager;
-import com.facebook.login.Login;
-import com.google.android.material.shadow.ShadowRenderer;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,9 +39,11 @@ import retrofit2.Response;
 public class SignupActivity extends AppCompatActivity {
 
     SharedPrefManager sharedPrefManager;
-    Button btn_register, male_tv, female_tv;
-    TextView Btn_back;
+    Button btn_register;
+    TextView Btn_back, tv_age;
     EditText editText, ed_number;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
 
@@ -48,14 +54,16 @@ public class SignupActivity extends AppCompatActivity {
 
         sharedPrefManager = new SharedPrefManager (this);
         initDatePicker ();
+
         dateButton = findViewById (R.id.datePickerButton);
         dateButton.setText (getTodayDate ());
+
         btn_register = findViewById (R.id.btn_register);
         Btn_back = findViewById (R.id.Btn_back);
         editText = findViewById (R.id.editText);
+        tv_age = findViewById (R.id.tv_age);
         ed_number = findViewById (R.id.ed_number);
-        male_tv = findViewById (R.id.male_tv);
-        female_tv = findViewById (R.id.female_tv);
+        radioGroup = (RadioGroup) findViewById (R.id.radio);
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -71,10 +79,19 @@ public class SignupActivity extends AppCompatActivity {
                 String name = editText.getText ().toString ();
                 String mobile = ed_number.getText ().toString ().trim ();
                 String dob = dateButton.getText ().toString ().trim ();
-
-                sharedPrefManager.setString (name);
+                String age = tv_age.getText ().toString ().trim ();
                 final String gender;
-                gender = male_tv.getText ().toString ().trim (); female_tv.getText ().toString ().trim ();
+
+                sharedPrefManager.setName (name);
+                sharedPrefManager.setUserMobile (mobile);
+                sharedPrefManager.setUserDob (dob);
+                sharedPrefManager.setUserAge (age);
+
+                int selectedId = radioGroup.getCheckedRadioButtonId ();
+                radioButton = (RadioButton) findViewById (selectedId);
+                gender = radioButton.getText ().toString ();
+
+                sharedPrefManager.setUserGender (gender);
 
                 if (name.equals ("") || name.contains (" ")) {
                     editText.setError ("Enter Your Full Name");
@@ -83,26 +100,22 @@ public class SignupActivity extends AppCompatActivity {
                     ed_number.setError ("Enter Correct Phone Number");
                 } else {
                     startActivity (new Intent (SignupActivity.this, ReligionActivity.class));
-
+                    finish ();
                 }
-                registerUser (name, mobile, gender, dob);
+                registerUser (name, mobile, gender, dob, age);
             }
         });
     }
 
-    public void registerUser(String name, String mobile, String gender, String dob) {
+    public void registerUser(String name, String mobile, String gender, String dob, String age) {
         UserService apiService = ApiService.getService ();
-        Call<SignUpResponse> Call = apiService.registerUser (name, mobile, gender, dob );
+        Call<SignUpResponse> Call = apiService.registerUser (name, mobile, gender, dob, age);
         Call.enqueue (new Callback<SignUpResponse> () {
             @Override
             public void onResponse(Call<SignUpResponse> responseCall, Response<SignUpResponse> response) {
                 if (response.isSuccessful ()) {
                     sharedPrefManager.setId (response.body ().getResult ().getId ());
 
-//                    String message = "Register Successfully";
-//                    Toast.makeText (SignupActivity.this, message, Toast.LENGTH_SHORT).show ();
-//                    startActivity (new Intent (SignupActivity.this, ReligionActivity.class));
-//                    finish ();
                 } else {
                     String message = "Get Yourself Register";
                     Toast.makeText (SignupActivity.this, message, Toast.LENGTH_SHORT).show ();
@@ -125,15 +138,21 @@ public class SignupActivity extends AppCompatActivity {
         month = month + 1;
         int day = cal.get (Calendar.DAY_OF_MONTH);
         return makeDateString (day, month, year);
+
     }
 
+    @SuppressLint("SetTextI18n")
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener () {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
+                Calendar c = Calendar.getInstance();
+                c.set(Calendar.YEAR, year);
+                c.set(Calendar.MONTH, month);
+                c.set(Calendar.DAY_OF_MONTH, day);
                 String date = makeDateString (day, month, year);
                 dateButton.setText (date);
+                tv_age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
             }
         };
 
@@ -147,6 +166,17 @@ public class SignupActivity extends AppCompatActivity {
         datePickerDialog = new DatePickerDialog (this, style, dateSetListener, year, month, day);
         datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis ());
 
+    }
+
+    private int calculateAge(long timeInMillis) {
+        Calendar dob = Calendar.getInstance();
+        dob.setTimeInMillis(timeInMillis);
+        Calendar today = Calendar.getInstance();
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        if(today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)){
+            age--;
+        }
+        return age;
     }
 
     private String makeDateString(int day, int month, int year) {

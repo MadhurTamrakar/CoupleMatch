@@ -48,7 +48,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="236dp"
-        android:src="@drawable/img_1"
+        android:src="@drawable/img_5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"

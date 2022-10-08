@@ -79,6 +79,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_age"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -123,6 +124,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_religion"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -167,6 +169,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_dosh"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -211,6 +214,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_Marital"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -255,6 +259,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_diet"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -299,6 +304,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_height"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -343,6 +349,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_education"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -387,6 +394,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_profession"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -431,6 +439,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_income"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -475,6 +484,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_city"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -519,6 +529,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_drink"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -563,6 +574,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_smoke"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -607,6 +619,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/add_physical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"

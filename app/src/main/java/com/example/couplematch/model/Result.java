@@ -20,6 +20,9 @@ public class Result {
     @SerializedName("dob")
     @Expose
     private String dob;
+    @SerializedName("age")
+    @Expose
+    private String age;
     @SerializedName("religion")
     @Expose
     private String religion;
@@ -99,6 +102,10 @@ public class Result {
     public void setDob(String dob) {
         this.dob = dob;
     }
+
+    public String getAge() {return age;}
+
+    public void setAge(String age) {this.age = age;}
 
     public String getReligion() {
         return religion;

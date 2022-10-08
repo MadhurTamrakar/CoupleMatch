@@ -16,6 +16,7 @@ public class Welcome_Splash_Activity extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     TextView tv_name, tv_id;
 
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,11 @@ public class Welcome_Splash_Activity extends AppCompatActivity {
         setContentView (R.layout.activity_welcome_splash);
 
         sharedPrefManager = new SharedPrefManager (this);
+
         tv_name = findViewById (R.id.tv_name);
         tv_id =  findViewById (R.id.tv_id);
 
-        String Name =sharedPrefManager.getString ();
+        String Name =sharedPrefManager.getName ();
         String id = sharedPrefManager.getUserCode ();
         tv_name.setText ("Welcome " +Name);
         tv_id.setText ("Your CoupleMatch ID is " + id);
@@ -35,8 +37,8 @@ public class Welcome_Splash_Activity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(Welcome_Splash_Activity.this, MainActivity.class);
-                Welcome_Splash_Activity.this.startActivity(mainIntent);
+                Intent i = new Intent(Welcome_Splash_Activity.this, MainActivity.class);
+                Welcome_Splash_Activity.this.startActivity(i);
                 Welcome_Splash_Activity.this.finish();
             }
         }, 3000);

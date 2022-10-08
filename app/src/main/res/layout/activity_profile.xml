@@ -39,13 +39,23 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
-            android:background="@drawable/download"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/Btn_menu"
             app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text_name"
@@ -54,17 +64,27 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="30dp"
                 android:text="Rose Dowson"
+                android:shadowColor="#000000"
+                android:shadowRadius="10"
+                android:shadowDy="2"
+                android:shadowDx="2"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/text_age"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginBottom="30dp"
+                android:gravity="center"
                 android:text="25"
+                android:shadowColor="#000000"
+                android:shadowRadius="10"
+                android:shadowDy="2"
+                android:shadowDx="2"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_name" />
@@ -84,6 +104,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="25km"
+                android:shadowColor="#000000"
+                android:shadowRadius="10"
+                android:shadowDy="2"
+                android:shadowDx="2"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView18"
@@ -95,6 +119,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Downtown"
+                android:shadowColor="#000000"
+                android:shadowRadius="10"
+                android:shadowDy="2"
+                android:shadowDx="2"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_distance"
@@ -118,7 +146,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
         <TextView
-            android:id="@+id/id"
+            android:id="@+id/userCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -143,6 +171,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
         <TextView
+            android:id="@+id/UserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -156,22 +185,28 @@
 
         <TextView
             android:id="@+id/religion_text"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"
             android:text="Christian"
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView28"
+            app:layout_constraintEnd_toStartOf="@+id/marital_status_text"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
         <TextView
             android:id="@+id/marital_status_text"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_profile_btn"
@@ -180,13 +215,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Height_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/religion_text"
             app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
         <TextView
             android:id="@+id/Height_text"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_profile_btn"
@@ -195,13 +234,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/marital_status_text"
             app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
         <TextView
             android:id="@+id/Diet_text"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_profile_btn"
@@ -210,13 +253,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Education_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/religion_text" />
 
         <TextView
             android:id="@+id/Education_text"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"
@@ -224,13 +271,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/profession_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Diet_text"
             app:layout_constraintTop_toTopOf="@+id/Diet_text" />
 
         <TextView
             android:id="@+id/profession_text"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"
@@ -238,13 +289,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Education_text"
             app:layout_constraintTop_toTopOf="@+id/Diet_text" />
 
         <TextView
             android:id="@+id/live_in_text"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_profile_btn"
@@ -253,13 +308,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/drink_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Diet_text" />
 
         <TextView
             android:id="@+id/drink_text"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"
@@ -267,13 +326,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/smoke_text"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/live_in_text"
             app:layout_constraintTop_toTopOf="@+id/live_in_text" />
 
         <TextView
             android:id="@+id/smoke_text"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginStart="5dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"
@@ -281,13 +344,17 @@
             android:textColor="#2196F3"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/drink_text"
             app:layout_constraintTop_toTopOf="@+id/live_in_text" />
 
         <TextView
             android:id="@+id/income_text"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_profile_btn"
             android:gravity="center"

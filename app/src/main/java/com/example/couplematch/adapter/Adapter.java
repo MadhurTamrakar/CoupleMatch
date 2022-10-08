@@ -2,6 +2,7 @@ package com.example.couplematch.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +13,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.couplematch.ProfileActivity;
 import com.example.couplematch.R;
-import com.example.couplematch.model.UserData;
+import com.example.couplematch.model.Result3;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-//    int []arr;
-//    public Adapter(int[] arr) {
-//        this.arr = arr;
-//    }
     Context context;
-    List<UserData> userData;
+    List<Result3> userData;
 
-    public Adapter(Context context, List<UserData> userData){
+    public Adapter(Context context, List<Result3> userData){
         this.userData = userData;
         this.context = context;
     }
@@ -34,24 +34,49 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from (context).inflate(R.layout.card_gride_layout, parent, false);
-        ViewHolder viewHolder = new ViewHolder (view);
+        View view = LayoutInflater.from (parent.getContext ()).inflate (R.layout.card_gride_layout, null);
+        Adapter.ViewHolder viewHolder = new Adapter.ViewHolder (view);
         return viewHolder;
     }
 
     @SuppressLint("CheckResult")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        final Result3 temp = userData.get (position);
+
         holder.tv_name.setText (userData.get (position).getName ());
-        holder.tv_age.setText (userData.get (position).getAge ().toString ());
+        holder.tv_location.setText (userData.get (position).getCity ());
+        holder.tv_age.setText (userData.get (position).getAge ());
         Glide.with (context)
             .load (userData.get (position).getProfile1 ())
-//            .placeholder (R.drawable.download2)
-//            .error(R.drawable.ic_launcher_background)
+            .placeholder (R.drawable.avatar)
+            .centerCrop ()
             .into (holder.Image_View);
-//        holder.detailTitle.setText (position);
-//        holder.detailTitle2.setText (position);
 
+        holder.Image_View.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (context, ProfileActivity.class);
+                intent.putExtra ("Image", temp.getProfile1 ());
+                intent.putExtra ("Name", temp.getName ());
+                intent.putExtra ("UserCode", temp.getUserCode ());
+                intent.putExtra ("Religion", temp.getReligion ());
+                intent.putExtra ("Marital_Status", temp.getMaritalStatus ());
+                intent.putExtra ("Height", temp.getHeight ());
+                intent.putExtra ("Diet", temp.getDiet ());
+                intent.putExtra ("Education", temp.getEducation ());
+                intent.putExtra ("Profession", temp.getProfession ());
+                intent.putExtra ("About_Me", temp.getAboutMe ());
+                intent.putExtra ("Partner_Preference", temp.getPartnerPreference ());
+                intent.putExtra ("City", temp.getCity ());
+                intent.putExtra ("Age", temp.getAge ());
+
+                intent.setFlags (Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity (intent);
+            }
+        });
+        //        holder.tv_age.setText (userData.get (position).getAge ().toString ());
     }
 
     @Override

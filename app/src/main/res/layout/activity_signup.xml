@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/Btn_back"
@@ -86,8 +90,8 @@
         app:layout_constraintEnd_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    <Button
-        android:id="@+id/male_tv"
+    <TextView
+        android:id="@+id/tv_gender"
         android:layout_width="110dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -95,31 +99,44 @@
         android:background="@drawable/selected_button"
         android:elevation="20dp"
         android:gravity="center"
-        android:text="Male"
+        android:text="Gender"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/female_tv"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ccp" />
 
-    <Button
-        android:id="@+id/female_tv"
-        android:layout_width="110dp"
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/selected_button"
+        android:background="@drawable/signup_edittext"
         android:elevation="20dp"
         android:gravity="center"
-        android:text="Female"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/male_tv"
-        app:layout_constraintTop_toBottomOf="@+id/ed_number" />
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/ed_number"
+        app:layout_constraintStart_toStartOf="@+id/ed_number"
+        app:layout_constraintTop_toTopOf="@+id/tv_gender">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signup_edittext"
+            android:checked="true"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/signup_edittext"
+            android:text="Female" />
+
+    </RadioGroup>
+
 
     <TextView
         android:id="@+id/textView12"
@@ -137,14 +154,13 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/male_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
 
     <Button
         android:id="@+id/datePickerButton"
         style="?android:spinnerStyle"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/signup_edittext"
         android:elevation="20dp"
@@ -155,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/female_tv" />
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
@@ -172,5 +188,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
 
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="25"
+        android:textColor="#00000000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -43,64 +43,67 @@ public class Result2 {
     private String dob;
     @SerializedName("religion")
     @Expose
-    private Object religion;
+    private String religion;
     @SerializedName("dosh")
     @Expose
-    private Object dosh;
+    private String dosh;
     @SerializedName("marital_status")
     @Expose
-    private Object maritalStatus;
+    private String maritalStatus;
     @SerializedName("diet")
     @Expose
-    private Object diet;
+    private String diet;
     @SerializedName("height")
     @Expose
-    private Object height;
+    private String height;
     @SerializedName("education")
     @Expose
-    private Object education;
+    private String education;
     @SerializedName("profession")
     @Expose
-    private Object profession;
+    private String profession;
     @SerializedName("location")
     @Expose
-    private Object location;
+    private String location;
+    @SerializedName("city")
+    @Expose
+    private String city;
     @SerializedName("lat")
     @Expose
-    private Object lat;
+    private String lat;
     @SerializedName("lon")
     @Expose
-    private Object lon;
+    private String lon;
     @SerializedName("about_me")
     @Expose
-    private Object aboutMe;
+    private String aboutMe;
     @SerializedName("partner_preference")
     @Expose
-    private Object partnerPreference;
+    private String partnerPreference;
     @SerializedName("age")
     @Expose
-    private Object age;
+    private String age;
     @SerializedName("physical_status")
     @Expose
-    private Object physicalStatus;
+    private String physicalStatus;
     @SerializedName("father_occupation")
     @Expose
-    private Object fatherOccupation;
+    private String fatherOccupation;
     @SerializedName("mother_occupation")
     @Expose
-    private Object motherOccupation;
+    private String motherOccupation;
     @SerializedName("drink")
     @Expose
-    private Object drink;
+    private String drink;
     @SerializedName("smoke")
     @Expose
-    private Object smoke;
+    private String smoke;
     @SerializedName("income")
     @Expose
-    private Object income;
+    private String income;
     @SerializedName("email")
     @Expose
-    private Object email;
+    private String email;
     @SerializedName("date_time")
     @Expose
     private String dateTime;
@@ -201,163 +204,167 @@ public class Result2 {
         this.dob = dob;
     }
 
-    public Object getReligion() {
+    public String getReligion() {
         return religion;
     }
 
-    public void setReligion(Object religion) {
+    public void setReligion(String religion) {
         this.religion = religion;
     }
 
-    public Object getDosh() {
+    public String getDosh() {
         return dosh;
     }
 
-    public void setDosh(Object dosh) {
+    public void setDosh(String dosh) {
         this.dosh = dosh;
     }
 
-    public Object getMaritalStatus() {
+    public String getMaritalStatus() {
         return maritalStatus;
     }
 
-    public void setMaritalStatus(Object maritalStatus) {
+    public void setMaritalStatus(String maritalStatus) {
         this.maritalStatus = maritalStatus;
     }
 
-    public Object getDiet() {
+    public String getDiet() {
         return diet;
     }
 
-    public void setDiet(Object diet) {
+    public void setDiet(String diet) {
         this.diet = diet;
     }
 
-    public Object getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(Object height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public Object getEducation() {
+    public String getEducation() {
         return education;
     }
 
-    public void setEducation(Object education) {
+    public void setEducation(String education) {
         this.education = education;
     }
 
-    public Object getProfession() {
+    public String getProfession() {
         return profession;
     }
 
-    public void setProfession(Object profession) {
+    public void setProfession(String profession) {
         this.profession = profession;
     }
 
-    public Object getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Object location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
-    public Object getLat() {
+    public String getCity() {return city;}
+
+    public void setCity(String city) {this.city = city;}
+
+    public String getLat() {
         return lat;
     }
 
-    public void setLat(Object lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public Object getLon() {
+    public String getLon() {
         return lon;
     }
 
-    public void setLon(Object lon) {
+    public void setLon(String lon) {
         this.lon = lon;
     }
 
-    public Object getAboutMe() {
+    public String getAboutMe() {
         return aboutMe;
     }
 
-    public void setAboutMe(Object aboutMe) {
+    public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
     }
 
-    public Object getPartnerPreference() {
+    public String getPartnerPreference() {
         return partnerPreference;
     }
 
-    public void setPartnerPreference(Object partnerPreference) {
+    public void setPartnerPreference(String partnerPreference) {
         this.partnerPreference = partnerPreference;
     }
 
-    public Object getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Object age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public Object getPhysicalStatus() {
+    public String getPhysicalStatus() {
         return physicalStatus;
     }
 
-    public void setPhysicalStatus(Object physicalStatus) {
+    public void setPhysicalStatus(String physicalStatus) {
         this.physicalStatus = physicalStatus;
     }
 
-    public Object getFatherOccupation() {
+    public String getFatherOccupation() {
         return fatherOccupation;
     }
 
-    public void setFatherOccupation(Object fatherOccupation) {
+    public void setFatherOccupation(String fatherOccupation) {
         this.fatherOccupation = fatherOccupation;
     }
 
-    public Object getMotherOccupation() {
+    public String getMotherOccupation() {
         return motherOccupation;
     }
 
-    public void setMotherOccupation(Object motherOccupation) {
+    public void setMotherOccupation(String motherOccupation) {
         this.motherOccupation = motherOccupation;
     }
 
-    public Object getDrink() {
+    public String getDrink() {
         return drink;
     }
 
-    public void setDrink(Object drink) {
+    public void setDrink(String drink) {
         this.drink = drink;
     }
 
-    public Object getSmoke() {
+    public String getSmoke() {
         return smoke;
     }
 
-    public void setSmoke(Object smoke) {
+    public void setSmoke(String smoke) {
         this.smoke = smoke;
     }
 
-    public Object getIncome() {
+    public String getIncome() {
         return income;
     }
 
-    public void setIncome(Object income) {
+    public void setIncome(String income) {
         this.income = income;
     }
 
-    public Object getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Object email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 

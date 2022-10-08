@@ -3,7 +3,7 @@ package com.example.couplematch.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserData {
+public class Result3 {
     @SerializedName("id")
     @Expose
     private String id;
@@ -12,7 +12,7 @@ public class UserData {
     private String name;
     @SerializedName("user_code")
     @Expose
-    private Object userCode;
+    private String userCode;
     @SerializedName("profile1")
     @Expose
     private String profile1;
@@ -64,6 +64,9 @@ public class UserData {
     @SerializedName("location")
     @Expose
     private String location;
+    @SerializedName("city")
+    @Expose
+    private String city;
     @SerializedName("lat")
     @Expose
     private Object lat;
@@ -78,7 +81,7 @@ public class UserData {
     private String partnerPreference;
     @SerializedName("age")
     @Expose
-    private Object age;
+    private String age;
     @SerializedName("physical_status")
     @Expose
     private Object physicalStatus;
@@ -120,11 +123,11 @@ public class UserData {
         this.name = name;
     }
 
-    public Object getUserCode() {
+    public String getUserCode() {
         return userCode;
     }
 
-    public void setUserCode(Object userCode) {
+    public void setUserCode(String userCode) {
         this.userCode = userCode;
     }
 
@@ -264,6 +267,10 @@ public class UserData {
         this.location = location;
     }
 
+    public String getCity() {return city;}
+
+    public void setCity(String city) {this.city = city;}
+
     public Object getLat() {
         return lat;
     }
@@ -296,11 +303,11 @@ public class UserData {
         this.partnerPreference = partnerPreference;
     }
 
-    public Object getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Object age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

@@ -1,14 +1,15 @@
 package com.example.couplematch.response;
 
+import java.util.ArrayList;
 import java.util.List;
-import com.example.couplematch.model.UserData;
+import com.example.couplematch.model.Result3;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUserData {
-    @SerializedName("result")
+    @SerializedName("result3")
     @Expose
-    private List<UserData> result = null;
+    private List<Result3> result3 = null;
     @SerializedName("message")
     @Expose
     private String message;
@@ -16,12 +17,12 @@ public class GetUserData {
     @Expose
     private String status;
 
-    public List<UserData> getResult() {
-        return result;
+    public List<Result3> getResult3() {
+        return result3;
     }
 
-    public void setResult(List<UserData> result) {
-        this.result = result;
+    public void setResult3(List<Result3> result3) {
+        this.result3 = result3;
     }
 
     public String getMessage() {

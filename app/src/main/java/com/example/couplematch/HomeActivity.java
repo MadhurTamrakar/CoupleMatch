@@ -1,7 +1,9 @@
 package com.example.couplematch;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.fragment.app.FragmentActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -27,10 +29,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -42,6 +52,7 @@ public class HomeActivity extends AppCompatActivity {
     AppCompatButton btn_continue_with_login;
     private ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9, image10;
 
+    @Deprecated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -199,11 +210,21 @@ public class HomeActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult (ApiException.class);
+
             startActivity (new Intent (HomeActivity.this, SignupActivity.class));
             finish ();
         } catch (ApiException e) {
             Log.w ("Error", "signInResult:failed code=" + e.getStatusCode ());
         }
     }
+    @Override
+    protected void onStart() {
+        super.onStart ();
 
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account != null){
+            Intent i = new Intent (HomeActivity.this, MainActivity.class);
+            startActivity (i);
+        }
+    }
 }

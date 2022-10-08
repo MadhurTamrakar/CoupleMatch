@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -46,6 +48,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/onlineUser"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -58,10 +61,11 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sort_listed"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Shortlisted Me"
+                android:text="Sort listed Me"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:paddingStart="10dp"
@@ -70,6 +74,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sort_listed_by_me"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -82,6 +87,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile_viewer"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -94,6 +100,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile_viewed"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -106,6 +113,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_send"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -118,6 +126,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_received"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -130,6 +139,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_accept_by_user"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -142,6 +152,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_accept_by_me"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -154,6 +165,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_cancel_user"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -166,10 +178,11 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/request_cancel_me"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Request Canceled By User"
+                android:text="Request Canceled By Me"
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:paddingStart="10dp"

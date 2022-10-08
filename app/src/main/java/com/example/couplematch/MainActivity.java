@@ -2,21 +2,22 @@ package com.example.couplematch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.couplematch.adapter.Adapter;
-import com.example.couplematch.model.UserData;
+import com.example.couplematch.model.Result3;
+import com.example.couplematch.response.GetUserData;
 import com.example.couplematch.service.ApiService;
 import com.example.couplematch.sharedPreference.SharedPrefManager;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +29,11 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     SharedPrefManager sharedPrefManager;
-    List<UserData> userDataList;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager LayoutManager;
-    TextView Btn_menu;
-
-//    int []arr = {R.drawable.download,R.drawable.download1,R.drawable.download2,R.drawable.download3,R.drawable.download4,
-//        R.drawable.download5,R.drawable.download6,R.drawable.download7,R.drawable.download8,R.drawable.download9,R.drawable.download10};
+    TextView Btn_menu, Btn_notification;
+    Adapter adapter;
+    private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,50 +41,76 @@ public class MainActivity extends AppCompatActivity {
         setContentView (R.layout.activity_main);
 
         sharedPrefManager = new SharedPrefManager (this);
+
+        Btn_notification = findViewById (R.id.Btn_notification);
         Btn_menu = findViewById (R.id.Btn_menu);
-        Btn_menu.setOnClickListener (new View.OnClickListener () {
+
+        Btn_notification.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity (new Intent (MainActivity.this,MenuActivity.class));
+                Toast.makeText (MainActivity.this, "No Notification", Toast.LENGTH_SHORT).show ();
             }
         });
 
-        userDataList = new ArrayList<> ();
-        recyclerView = findViewById (R.id.recyclerView);
-        String user_Id = sharedPrefManager.getId ();
-        GetUser(user_Id);
+        Btn_menu.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (MainActivity.this, MenuActivity.class);
+                startActivity (i);
 
-//        recyclerView.setHasFixedSize (true);
-//        adapter = new Adapter (arr);
-//        recyclerView.setAdapter (adapter);
+            }
+        });
+
+        String user_Id = sharedPrefManager.getId ();
+        GetUser (user_Id);
 
     }
 
     private void GetUser(String user_Id) {
-        Call<List<UserData>> user = ApiService.getService ().GetUser (user_Id);
-        user.enqueue (new Callback<List<UserData>> () {
+        final ProgressDialog progressDialog = new ProgressDialog (MainActivity.this);
+        progressDialog.setMessage ("Loading....");
+        progressDialog.show ();
+        Call<GetUserData> GetUser = ApiService.getService ().GetUser (user_Id);
+        GetUser.enqueue (new Callback<GetUserData> () {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(Call<List<UserData>> call, Response<List<UserData>> response) {
-                List<UserData> userDataList = response.body ();
-
-                for(UserData userData : userDataList) {
-                    userDataList.add (userData);
+            public void onResponse(Call<GetUserData> call, Response<GetUserData> response) {
+                if (response.isSuccessful ()) {
+                    progressDialog.dismiss ();
+                    recyclerView = findViewById (R.id.recyclerView);
+                    LayoutManager = new GridLayoutManager (getApplicationContext (), 2);
+                    recyclerView.setLayoutManager (LayoutManager);
+                    adapter = new Adapter (getApplicationContext (), response.body ().getResult3 ());
+                    recyclerView.setAdapter (adapter);
+                    recyclerView.setHasFixedSize (true);
+                    adapter.getItemCount ();
+                    adapter.notifyDataSetChanged ();
                 }
-//                String position = null;
-                setAdapter(userDataList);
+                else{
+                    Toast.makeText (MainActivity.this, "Failed To Load Data", Toast.LENGTH_SHORT).show ();
+                }
             }
 
             @Override
-            public void onFailure(Call<List<UserData>> call, Throwable t) {
-
+            public void onFailure(Call<GetUserData> call, Throwable t) {
+                Log.d("", "Error Loaded");
             }
         });
     }
 
-    private void setAdapter(List<UserData> userDataList) {
-        LayoutManager = new GridLayoutManager (this,2);
-        recyclerView.setLayoutManager (LayoutManager);
-        Adapter adapter = new Adapter (this,userDataList);
-        recyclerView.setAdapter (adapter);
+    @Override
+    public void onBackPressed() {
+
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finishAffinity();
+            finish();
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+
+        }
+        pressedTime = System.currentTimeMillis();
     }
+
+
 }

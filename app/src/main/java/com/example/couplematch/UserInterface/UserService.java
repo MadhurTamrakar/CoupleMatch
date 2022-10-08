@@ -1,9 +1,12 @@
 package com.example.couplematch.UserInterface;
 
-import com.example.couplematch.model.UserData;
+import com.example.couplematch.model.Result3;
+import com.example.couplematch.response.DeleteData;
 import com.example.couplematch.response.GetUserData;
+import com.example.couplematch.response.HelpSupport;
 import com.example.couplematch.response.PhotoResponse;
 import com.example.couplematch.response.SignUpResponse;
+import com.example.couplematch.response.UniqueUserData;
 import com.example.couplematch.response.UpdateProfileResponse;
 
 import java.util.List;
@@ -27,7 +30,8 @@ public interface UserService {
         @Field("name") String name,
         @Field("mobile") String mobile,
         @Field("gender") String gender,
-        @Field("dob") String dob);
+        @Field("dob") String dob,
+        @Field ("age") String age);
 
     @FormUrlEncoded
     @POST("update_profile")
@@ -42,8 +46,36 @@ public interface UserService {
         @Field("education") String education,
         @Field("profession") String profession,
         @Field("location") String location,
+        @Field ("city") String city,
         @Field("about_me") String about_me,
         @Field("partner_preference") String partner_preference);
+
+    @FormUrlEncoded
+    @POST("update_profile")
+    Call<UpdateProfileResponse> UpdateProfileAgain(
+        @Field("user_id") String user_id,
+        @Field("name") String name,
+        @Field("mobile") String mobile,
+        @Field("gender") String gender,
+        @Field("dob") String dob,
+        @Field("religion") String religion,
+        @Field("dosh") String dosh,
+        @Field("marital_status") String marital_status,
+        @Field("diet") String diet,
+        @Field("height") String height,
+        @Field("education") String education,
+        @Field("profession") String profession,
+        @Field("location") String location,
+        @Field("about_me") String about_me,
+        @Field("partner_preference") String partner_preference,
+        @Field("income") String income,
+        @Field("drink") String drink,
+        @Field("smoke") String smoke,
+        @Field("father_occupation") String father_occupation,
+        @Field("mother_occupation") String mother_occupation,
+        @Field("email") String email,
+        @Field("age") String age,
+        @Field("physical_status") String physical_status);
 
     @Multipart
     @POST("add_profiles")
@@ -57,7 +89,28 @@ public interface UserService {
         @Part MultipartBody.Part profile6);
 
     @GET("get_all_data")
-    Call<List<UserData>> GetUser(
-        @Query ("user_id") String user_id);
+    Call<GetUserData> GetUser(
+        @Query("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("update_profile")
+    Call<UpdateProfileResponse> EditProfile(
+        @Field("user_id") String user_id);
+
+    @GET("get_data_user_code")
+    Call<UniqueUserData> GetUniqueUserData(
+        @Query("user_code") String user_code);
+
+    @FormUrlEncoded
+    @POST("account_delete")
+    Call<DeleteData> DeleteAccount(
+        @Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("help_and_support")
+    Call<HelpSupport> Help_And_Support(
+        @Field("user_id") String user_id,
+        @Field ("email") String email,
+        @Field ("message") String message);
 
 }

@@ -23,11 +23,13 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
@@ -44,8 +46,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class LocationActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity{
 
+    TextView city;
     AppCompatButton Continue_btn;
     EditText location_ET;
     Button Enable_current_location;
@@ -65,6 +68,7 @@ public class LocationActivity extends AppCompatActivity {
         Education = getIntent ().getStringExtra ("Education");
         Professional = getIntent ().getStringExtra ("Professional");
 
+        city = findViewById (R.id.city);
         Continue_btn = findViewById (R.id.Continue_btn);
         location_ET = findViewById (R.id.location_ET);
         Enable_current_location = findViewById (R.id.Enable_current_location);
@@ -112,7 +116,9 @@ public class LocationActivity extends AppCompatActivity {
                 i.putExtra ("Education", Education);
                 i.putExtra ("Professional", Professional);
                 i.putExtra ("Location", location_ET.getText ().toString ());
+                i.putExtra ("City", city.getText ().toString ());
                 startActivity (i);
+
 //                startActivity (new Intent (LocationActivity.this, AboutActivity.class));
             }
         });
@@ -151,6 +157,7 @@ public class LocationActivity extends AppCompatActivity {
                                 location.getLongitude (), 1);
 
                             location_ET.setText (Html.fromHtml (addresses.get (0).getAddressLine (0)));
+                            city.setText (addresses.get (0).getLocality ());
 
                         } catch (IOException e) {
                             e.printStackTrace ();

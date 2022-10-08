@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
+
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
@@ -19,16 +20,23 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.couplematch.UserInterface.UserService;
 import com.example.couplematch.databinding.ActivityMainBinding;
 import com.example.couplematch.response.PhotoResponse;
 import com.example.couplematch.service.ApiService;
 import com.example.couplematch.sharedPreference.SharedPrefManager;
+
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -71,11 +79,20 @@ public class Add_Photo_Activity extends AppCompatActivity {
 
         MyPopUp = new Dialog (this);
 
+        Btn_back.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (Add_Photo_Activity.this, AboutActivity.class));
+            }
+        });
+
         Continue_btn.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
                 String user_id = sharedPrefManager.getId ();
-                startActivity (new Intent (Add_Photo_Activity.this, Welcome_Splash_Activity.class));
+                Intent i = new Intent (Add_Photo_Activity.this, Welcome_Splash_Activity.class);
+                startActivity (i);
+                finish ();
                 UploadImage (user_id);
             }
         });
@@ -164,15 +181,28 @@ public class Add_Photo_Activity extends AppCompatActivity {
             Context context = Add_Photo_Activity.this;
             path = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
+
             image1.setImageBitmap (bitmap);
-
-
         }
         if (requestCode == PHOTO2 && data != null) {
             Uri uri = data.getData ();
             Context context = Add_Photo_Activity.this;
             path2 = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path2);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path2);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
             image2.setImageBitmap (bitmap);
         }
         if (requestCode == PHOTO3 && data != null) {
@@ -180,6 +210,13 @@ public class Add_Photo_Activity extends AppCompatActivity {
             Context context = Add_Photo_Activity.this;
             path3 = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path3);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path3);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
             image3.setImageBitmap (bitmap);
         }
         if (requestCode == PHOTO4 && data != null) {
@@ -187,6 +224,13 @@ public class Add_Photo_Activity extends AppCompatActivity {
             Context context = Add_Photo_Activity.this;
             path4 = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path4);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path4);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
             image4.setImageBitmap (bitmap);
         }
         if (requestCode == PHOTO5 && data != null) {
@@ -194,6 +238,13 @@ public class Add_Photo_Activity extends AppCompatActivity {
             Context context = Add_Photo_Activity.this;
             path5 = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path5);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path5);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
             image5.setImageBitmap (bitmap);
         }
         if (requestCode == PHOTO6 && data != null) {
@@ -201,6 +252,13 @@ public class Add_Photo_Activity extends AppCompatActivity {
             Context context = Add_Photo_Activity.this;
             path6 = RealPathUtil.getRealPath (context, uri);
             Bitmap bitmap = BitmapFactory.decodeFile (path6);
+            FileOutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream (path6);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+            bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
             image6.setImageBitmap (bitmap);
         }
     }
@@ -241,7 +299,8 @@ public class Add_Photo_Activity extends AppCompatActivity {
 
                     if (response.body ().getResult ().toString ().equals ("200")) {
 
-                    } else {}
+                    } else {
+                    }
                 }
             }
 
@@ -272,6 +331,7 @@ public class Add_Photo_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 MyPopUp.dismiss ();
                 startActivity (new Intent (Add_Photo_Activity.this, Welcome_Splash_Activity.class));
+
             }
         });
         MyPopUp.getWindow ().setBackgroundDrawable (new ColorDrawable (Color.TRANSPARENT));

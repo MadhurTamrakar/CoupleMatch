@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class SavedPreferenceActivity extends AppCompatActivity {
 
-    TextView Btn_back;
+    TextView Btn_back, add_physical, add_smoke, add_drink, add_city, add_income, add_profession, add_education, add_height, add_diet, add_Marital, add_dosh, add_religion, add_age ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

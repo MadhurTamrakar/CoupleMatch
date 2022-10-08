@@ -33,6 +33,20 @@
             app:layout_constraintStart_toEndOf="@+id/Btn_back"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/Refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/refresh"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv1" />
+
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
@@ -253,6 +267,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -297,10 +312,12 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/email"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
+                    android:clickable="true"
                     android:text="ADD >"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
@@ -341,11 +358,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/mobile"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -385,6 +404,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/dob"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -429,6 +449,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/gender"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -469,10 +490,12 @@
                     android:layout_marginStart="10dp"
                     android:gravity="start"
                     android:text="Age"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/age"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -517,6 +540,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/religion"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -561,11 +585,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/dosh"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -605,6 +631,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/marital_status"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -649,11 +676,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/diet"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -693,6 +722,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/height"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -737,11 +767,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/education"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -781,11 +813,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/profession"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -825,11 +859,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/income"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -869,11 +905,14 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/location"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -913,11 +952,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/drink"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -957,11 +998,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/smoke"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -1001,11 +1044,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/physical_status"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -1045,11 +1090,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/father_occupation"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
@@ -1089,11 +1136,13 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/mother_occupation"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:gravity="end"
                     android:text="ADD >"
+                    android:clickable="true"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
             </LinearLayout>
