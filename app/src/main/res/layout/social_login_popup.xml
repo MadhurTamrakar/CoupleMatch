@@ -10,13 +10,13 @@
 
     <TextView
         android:id="@+id/textClose"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
         android:background="@drawable/cancle_btn"
         android:text="X"
         android:gravity="center"
         android:layout_gravity="end"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton

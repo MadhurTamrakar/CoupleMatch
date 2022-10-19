@@ -34,14 +34,15 @@ import retrofit2.Response;
 public class EditProfileActivity extends AppCompatActivity {
 
     SharedPrefManager sharedPrefManager;
-    TextView Btn_back, Refresh, tvname, tvemail, tvmobile, tvdob, tvgender, tvage, tvreligion, tvdosh, tvmarital_status, tvdiet, tvheight, tveducation, tvprofession, tvincome, tvlocation, tvdrink, tvsmoke, tvphysical_status, tvfather_occupation, tvmother_occupation;;
+    TextView ccp, Btn_back, Refresh, tvname, tvemail, tvmobile, tvdob, tvgender, tvage, tvreligion, tvdosh, tvmarital_status, tvdiet, tvheight, tveducation, tvprofession, tvincome, tvlocation, tvdrink, tvsmoke, tvphysical_status, tvfather_occupation, tvmother_occupation;;
     Dialog Saved;
     EditText tved_about, tved_preference;
-    String Name, Mobile, Email, Gender, Age, Dob, Religion, Dosh, MaritalStatus, Diet, Height, Education, Professional, Location, About_me, Partner_Preference, Income, Drink, Smoke, PhysicalStatus, Father_Occupation, Mother_Occupation;
+    String Name, Mobile, Countrycode, Email, Gender, Age, Dob, Religion, Dosh, MaritalStatus, Diet, Height, Education, Professional, Location, About_me, Partner_Preference, Income, Drink, Smoke, PhysicalStatus, Father_Occupation, Mother_Occupation;
     ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6;
     AppCompatButton save_btn;
 
     //    @SuppressLint("WrongViewCast")
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -52,6 +53,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String user_id = sharedPrefManager.getId ();
         Name = sharedPrefManager.getName ();
         Mobile = sharedPrefManager.getUserMobile ();
+        Countrycode = sharedPrefManager.getCountryCode ();
         Gender = sharedPrefManager.getUserGender ();
         Dob = sharedPrefManager.getUserDob ();
         Age = sharedPrefManager.getUserAge ();
@@ -79,6 +81,7 @@ public class EditProfileActivity extends AppCompatActivity {
         save_btn = findViewById (R.id.save_btn);
         tvname = findViewById (R.id.name);
         tvemail = findViewById (R.id.email);
+        ccp = findViewById (R.id.ccp);
         tvmobile = findViewById (R.id.mobile);
         tvdob = findViewById (R.id.dob);
         tvgender = findViewById (R.id.gender);
@@ -120,6 +123,48 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity (new Intent (EditProfileActivity.this, MenuActivity.class));
+            }
+        });
+        tvreligion.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, ReligionActivity.class));
+                finish ();
+            }
+        });
+        tvmarital_status.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, MaritalStatusActivity.class));
+                finish ();
+            }
+        });
+        tvdiet.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, DietActivity.class));
+                finish ();
+            }
+        });
+        tvheight.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, HeightActivity.class));
+                finish ();
+            }
+        });
+        tveducation.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, EducationActivity.class));
+                finish ();
+            }
+        });
+        tvprofession.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity (new Intent (EditProfileActivity.this, ProfessionalActivity.class));
+                finish ();
             }
         });
         tvincome.setOnClickListener (new View.OnClickListener () {
@@ -166,6 +211,11 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         tvname.setText (Name);
+        if(Countrycode.isEmpty ()){
+            ccp.setText ("");
+        }else{
+            ccp.setText ("+91-");
+        }
         tvgender.setText (Gender);
         tvdob.setText (Dob);
         tvage.setText (Age);

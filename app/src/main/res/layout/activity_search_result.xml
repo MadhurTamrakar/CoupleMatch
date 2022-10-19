@@ -62,62 +62,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchById_btn"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_profile_btn"
+        android:text="Search By ID"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/ed_id"
+        app:layout_constraintStart_toStartOf="@+id/ed_id"
+        app:layout_constraintTop_toBottomOf="@+id/ed_id" />
+
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_id" />
+        app:layout_constraintTop_toBottomOf="@+id/searchById_btn" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:text="Search By Distance"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="Within"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="15sp"-->
-<!--        android:textStyle="normal"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/textView18"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView18" />-->
-
-<!--    <com.google.android.material.slider.Slider-->
-<!--        android:id="@+id/slider_distance"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--        android:valueFrom="0"-->
-<!--        android:valueTo="100"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView18" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textView19"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="100 KM"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="15sp"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/slider_distance"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView18" />-->
 
     <TextView
         android:id="@+id/textView20"
@@ -129,7 +97,7 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 
     <LinearLayout
         android:id="@+id/btn_age"
@@ -166,6 +134,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/age"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -173,6 +142,7 @@
             android:text="ADD >"
             android:textColor="@color/black"
             android:textSize="15sp"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -210,6 +180,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/religion"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -254,6 +225,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/dosh"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -298,6 +270,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/marital_status"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -342,6 +315,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/Diet"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -386,6 +360,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/height"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -430,6 +405,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/education"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -474,6 +450,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/profession"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -518,6 +495,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/income"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -527,49 +505,6 @@
             android:textSize="15sp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/btn_location"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_income">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/location" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:gravity="start"
-            android:text="Location"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:gravity="end"
-            android:text="ADD >"
-            android:textColor="@color/black"
-            android:textSize="15sp"/>
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btn_drink"
@@ -584,7 +519,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_location">
+        app:layout_constraintTop_toBottomOf="@+id/btn_income">
 
         <ImageView
             android:layout_width="20dp"
@@ -606,6 +541,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/drink"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -650,6 +586,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/smoke"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -694,6 +631,7 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/physical_status"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"

@@ -4,18 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.101" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/about_widget.xml" value="0.149" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/add_image.xml" value="0.1015" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/back_arrow.xml" value="0.1" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/btn_clicked.xml" value="0.142" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/btn_pressed.xml" value="0.1105" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/btn_selected.xml" value="0.1535" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/button_text_color.xml" value="0.1025" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/cancle_btn.xml" value="0.1" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/card_view.xml" value="0.142" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/continue_btn.xml" value="0.1305" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/edit_profile_btn.xml" value="0.1015" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/edittext.xml" value="0.1015" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/ic_baseline_monetization_on_24.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/ic_launcher_background.xml" value="0.101" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/img_background.xml" value="0.1445" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/login_socialmedia.xml" value="0.1" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/outline_box.xml" value="0.1445" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/plain_btn.xml" value="0.1095" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/popup.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/drawable/selected_button.xml" value="0.1025" />
@@ -31,42 +36,69 @@
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_diet.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_dosh.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_drink.xml" value="0.22" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_edit_profile.xml" value="0.14" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_education.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_father_occupation.xml" value="0.22" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_friend_request_list.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_height.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_help_support.xml" value="0.14" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_home.xml" value="0.16" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_income.xml" value="0.16" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_location.xml" value="0.18" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_marital_status.xml" value="0.18" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_match.xml" value="0.16" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_menu.xml" value="0.75" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_menu.xml" value="0.16" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_mother_occupation.xml" value="0.33" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_notification.xml" value="0.17" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_person_view.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_physical_status.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_profession.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_professional.xml" value="0.18" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_profile_viewed.xml" value="0.15533088235294118" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_profile.xml" value="0.18" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_profile_viewed.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_religion.xml" value="0.18" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_request_received.xml" value="0.25" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_preference.xml" value="0.2" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_age.xml" value="0.22" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_diet.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_dosh.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_drink.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_education.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_height.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_income.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_marital_status.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_physical_status.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_preference.xml" value="0.25" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_profession.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_religion.xml" value="0.25" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_saved_smoke.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_search_result.xml" value="0.22" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_share_our_app.xml" value="0.12" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_searched_profile.xml" value="0.10788757932910245" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_share_our_app.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_smoke.xml" value="0.22" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_splash.xml" value="0.2" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_unique_profile_id.xml" value="0.5" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_unique_profile_id.xml" value="0.14" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/activity_welcom_splash.xml" value="0.33" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/cancel_request.xml" value="0.1" />
-        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/card_gride_layout.xml" value="0.22" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/card_gride_layout.xml" value="0.25" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_accepted_by_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_accepted_by_user.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_cancel_by_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_cancel_by_user.xml" value="0.11423390752493201" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_online_user.xml" value="0.14" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_profile_viewed_by_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_profile_viewer.xml" value="0.33" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_religion.xml" value="0.22" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_request_by_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_request_send_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_sort_listed_by_me.xml" value="0.11423390752493201" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/fragment_sort_listed_me.xml" value="0.2" />
+        <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/friend_request_list.xml" value="0.21" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/help_support_pop_up.xml" value="0.17" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/logout_popup.xml" value="0.16" />
         <entry key="..\:/Users/HZT/AndroidStudioProjects/CoupleMatch/app/src/main/res/layout/message_sent_popup.xml" value="0.22" />

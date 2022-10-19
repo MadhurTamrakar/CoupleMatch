@@ -10,6 +10,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.Locale;
 
 public class ContactUsActivity extends AppCompatActivity {
@@ -17,6 +25,7 @@ public class ContactUsActivity extends AppCompatActivity {
     TextView Btn_back;
     ImageView map;
     ImageButton mail_box;
+    GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +67,10 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
     private void openMap() {
-        String uri = String.format(Locale.ENGLISH, "geo:0,0?q=Committee Chowk, Shahbad, Haryana", 30.170406, 76.867722);
+        String latitude = "30.170406";
+        String longitude = "76.867722";
+        String uri = "https://www.google.com.tw/maps/place/" + latitude + "," + longitude;
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        intent.setPackage ("com.google.android.apps.maps");
         startActivity(intent);
     }
 }

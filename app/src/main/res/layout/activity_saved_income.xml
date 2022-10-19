@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".SavedIncome">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".IncomeActivity">
+
+        <TextView
+            android:id="@+id/Btn_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/money"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Income"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/any"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Any"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR1_INR3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR1_INR3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 1 Lakhs to 3 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR3_INR5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/any" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR3_INR5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 3 Lakhs to 5 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR5_INR7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR1_INR3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR5_INR7"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 5 Lakhs to 7 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR7_INR10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR3_INR5" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR7_INR10"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 7 Lakhs to 10 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR10_INR12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR5_INR7" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR10_INR12"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 10 Lakhs to 12 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR12_INR15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR7_INR10" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR12_INR15"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 12 Lakhs to 15 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR15_INR17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR10_INR12" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR15_INR17"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 15 Lakhs to 17 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR17_INR20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR12_INR15" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR17_INR20"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 17 Lakhs to 20 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_INR20_INR23"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR15_INR17" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_INR20_INR23"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="INR 20 Lakhs to 23 Lakhs"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_INR17_INR20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

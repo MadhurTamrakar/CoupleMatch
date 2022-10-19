@@ -15,20 +15,36 @@ import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.bumptech.glide.Glide;
+import com.example.couplematch.UserInterface.UserService;
+import com.example.couplematch.response.Block;
+import com.example.couplematch.response.PhotoResponse;
+import com.example.couplematch.response.RequestSend;
+import com.example.couplematch.response.SortList;
+import com.example.couplematch.response.profileViewed;
+import com.example.couplematch.service.ApiService;
+import com.example.couplematch.sharedPreference.SharedPrefManager;
 import com.squareup.picasso.Picasso;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
 
     ImageView profileImage;
     TextView text_name, userCode, text_age, Btn_menu, UserName, text_location, religion_text, marital_status_text, Height_text, Diet_text, Education_text, profession_text, drink_text, live_in_text, smoke_text, income_text, about_text, about_partner_text, Btn_notification;
-    String Name, UserCode, Age, Religion, Marital_Status, Height, Diet, Education, Profession, About_Me, Partner_Preference, City;
+    String Id, Name, UserCode, Age, Religion, Marital_Status, Height, Diet, Education, Profession, About_Me, Partner_Preference, City;
     AppCompatButton connect_btn, block_btn, skip_btn, shortlist_btn;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_profile);
 
+        sharedPrefManager = new SharedPrefManager (this);
+
+        Id = getIntent ().getStringExtra ("Id");
         Name = getIntent ().getStringExtra ("Name");
         UserCode = getIntent ().getStringExtra ("UserCode");
         Religion = getIntent ().getStringExtra ("Religion");
@@ -65,22 +81,32 @@ public class ProfileActivity extends AppCompatActivity {
         connect_btn = findViewById (R.id.connect_btn);
         block_btn = findViewById (R.id.block_btn);
         skip_btn = findViewById (R.id.skip_btn);
-        shortlist_btn =  findViewById (R.id.shortlist_btn);
+        shortlist_btn = findViewById (R.id.shortlist_btn);
+
+
+        String user_id = sharedPrefManager.getId ();
+        String profile_id = Id;
+        profileView (user_id, profile_id);
+
 
         Btn_notification.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText (ProfileActivity.this, "No Notification", Toast.LENGTH_SHORT).show ();
+                Intent i = new Intent (ProfileActivity.this, NotificationActivity.class);
+                startActivity (i);
             }
         });
 
         shortlist_btn.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Profile Added To Shortlist" , Toast.LENGTH_SHORT ).show();
-                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
-                startActivity (intent);
-                finish ();
+                String user_id = sharedPrefManager.getId ();
+                String sort_id = Id;
+                SortList (user_id, sort_id);
+//                Toast.makeText(getBaseContext(), "Profile Added To Shortlist" , Toast.LENGTH_SHORT ).show();
+//                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
+//                startActivity (intent);
+//                finish ();
             }
         });
 
@@ -96,20 +122,22 @@ public class ProfileActivity extends AppCompatActivity {
         block_btn.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "You Blocked This Profile" , Toast.LENGTH_SHORT ).show();
-                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
-                startActivity (intent);
-                finish ();
+                String user_id = sharedPrefManager.getId ();
+                String block_id = Id;
+                Block (user_id, block_id);
+//                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
+//                startActivity (intent);
+//                finish ();
             }
         });
 
         connect_btn.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Request Is Send" , Toast.LENGTH_SHORT ).show();
-                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
-                startActivity (intent);
-                finish ();
+                String user_id = sharedPrefManager.getId ();
+                String request_id = Id;
+                Request_Send (user_id, request_id);
+                connect_btn.setText ("Request Send");
             }
         });
 
@@ -141,5 +169,85 @@ public class ProfileActivity extends AppCompatActivity {
         about_partner_text.setText (Partner_Preference);
         text_location.setText (City);
         text_age.setText (Age);
+    }
+
+    private void profileView(String user_id, String profile_id) {
+        UserService apiService = ApiService.getService ();
+        Call<profileViewed> call = apiService.profile_view (user_id, profile_id);
+        call.enqueue (new Callback<profileViewed> () {
+            @Override
+            public void onResponse(Call<profileViewed> call, Response<profileViewed> response) {
+                if (response.isSuccessful ()) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<profileViewed> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void SortList(String user_id, String sort_id) {
+        UserService apiService = ApiService.getService ();
+        Call<SortList> call = apiService.sort_list (user_id, sort_id);
+        call.enqueue (new Callback<SortList> () {
+            @Override
+            public void onResponse(Call<SortList> call, Response<SortList> response) {
+                if (response.isSuccessful ()) {
+                    Toast.makeText (getBaseContext (), response.body ().getMessage (), Toast.LENGTH_SHORT).show ();
+                    startActivity (new Intent (ProfileActivity.this, MainActivity.class));
+                } else {
+                    Toast.makeText (getBaseContext (), "Error", Toast.LENGTH_SHORT).show ();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SortList> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void Block(String user_id, String block_id) {
+        UserService apiService = ApiService.getService ();
+        Call<Block> call = apiService.block_user (user_id, block_id);
+        call.enqueue (new Callback<Block> () {
+            @Override
+            public void onResponse(Call<Block> call, Response<Block> response) {
+                if (response.isSuccessful ()) {
+                    Toast.makeText (getBaseContext (), "You Blocked This Profile", Toast.LENGTH_SHORT).show ();
+                    startActivity (new Intent (ProfileActivity.this, MainActivity.class));
+                } else {
+                    Toast.makeText (getBaseContext (), "Error", Toast.LENGTH_SHORT).show ();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Block> call, Throwable t) {
+                Toast.makeText (getBaseContext (), "Error", Toast.LENGTH_SHORT).show ();
+            }
+        });
+    }
+
+    private void Request_Send(String user_id, String request_id) {
+        UserService apiService = ApiService.getService ();
+        Call<RequestSend> call = apiService.send_friend_request (user_id, request_id);
+        call.enqueue (new Callback<RequestSend> () {
+            @Override
+            public void onResponse(Call<RequestSend> call, Response<RequestSend> response) {
+                if (response.isSuccessful ()) {
+                    Toast.makeText (getBaseContext (), "Request Send", Toast.LENGTH_SHORT).show ();
+                } else {
+                    Toast.makeText (getBaseContext (), "Error", Toast.LENGTH_SHORT).show ();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RequestSend> call, Throwable t) {
+
+            }
+        });
     }
 }

@@ -12,33 +12,33 @@ import com.example.couplematch.R;
 
 public class OnlineUserFragment extends Fragment {
 
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
-//
-//    private String mParam1;
-//    private String mParam2;
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
-//    public OnlineUserFragment() {
-//        // Required empty public constructor
-//    }
+    private String mParam1;
+    private String mParam2;
 
-//    public static OnlineUserFragment newInstance(String param1, String param2) {
-//        OnlineUserFragment fragment = new OnlineUserFragment ();
-//        Bundle args = new Bundle ();
-//        args.putString (ARG_PARAM1, param1);
-//        args.putString (ARG_PARAM2, param2);
-//        fragment.setArguments (args);
-//        return fragment;
-//    }
+    public OnlineUserFragment() {
+        // Required empty public constructor
+    }
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate (savedInstanceState);
-//        if (getArguments () != null) {
-//            mParam1 = getArguments ().getString (ARG_PARAM1);
-//            mParam2 = getArguments ().getString (ARG_PARAM2);
-//        }
-//    }
+    public static OnlineUserFragment newInstance(String param1, String param2) {
+        OnlineUserFragment fragment = new OnlineUserFragment ();
+        Bundle args = new Bundle ();
+        args.putString (ARG_PARAM1, param1);
+        args.putString (ARG_PARAM2, param2);
+        fragment.setArguments (args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate (savedInstanceState);
+        if (getArguments () != null) {
+            mParam1 = getArguments ().getString (ARG_PARAM1);
+            mParam2 = getArguments ().getString (ARG_PARAM2);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

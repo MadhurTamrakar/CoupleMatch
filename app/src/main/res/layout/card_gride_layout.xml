@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_practitioner"
     android:layout_width="match_parent"
-    android:padding="5dp"
     android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="10dp"
     android:orientation="vertical">
 
     <ImageView
@@ -18,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="23.5dp"
-        android:background="#63FFFFFF"
+        android:background="#00FFFFFF"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:orientation="horizontal">
@@ -27,14 +31,18 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:gravity="center"
-            android:layout_marginStart="5dp"
             android:paddingBottom="0dp"
+            android:shadowColor="#000000"
+            android:shadowRadius="10"
+            android:shadowDy="2"
+            android:shadowDx="2"
             android:text="Jenny Jolly"
-            android:textStyle="bold"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="13sp" />
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_age"
@@ -43,9 +51,13 @@
             android:layout_marginStart="10dp"
             android:gravity="center"
             android:text="25"
-            android:textSize="13sp"
+            android:shadowColor="#000000"
+            android:shadowRadius="10"
+            android:shadowDy="2"
+            android:shadowDx="2"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textSize="13sp"
             android:visibility="visible" />
 
     </LinearLayout>
@@ -55,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#63FFFFFF"
+        android:background="#00FFFFFF"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:orientation="horizontal">
@@ -67,17 +79,6 @@
             android:src="@drawable/location_widget"
             android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/tv_distance"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_marginStart="5dp"
-            android:text="30km"
-            android:textStyle="normal"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/tv_location"
@@ -86,12 +87,16 @@
             android:layout_marginStart="10dp"
             android:gravity="center"
             android:text="Meerut"
+            android:shadowColor="#000000"
+            android:shadowRadius="10"
+            android:shadowDy="2"
+            android:shadowDx="2"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="normal"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
             android:visibility="visible" />
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.cardview.widget.CardView>

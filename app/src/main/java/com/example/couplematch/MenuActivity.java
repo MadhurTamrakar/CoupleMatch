@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -17,10 +18,13 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.couplematch.UserInterface.UserService;
 import com.example.couplematch.response.PhotoResponse;
+import com.example.couplematch.response.RequestReceived;
+import com.example.couplematch.response.RequestSend;
 import com.example.couplematch.response.UpdateProfileResponse;
 import com.example.couplematch.service.ApiService;
 import com.example.couplematch.sharedPreference.SharedPrefManager;
@@ -58,7 +62,7 @@ public class MenuActivity extends AppCompatActivity {
         btn_home = findViewById (R.id.btn_home);
         btn_search = findViewById (R.id.btn_search);
         btn_saved = findViewById (R.id.btn_saved);
-        btn_online = findViewById (R.id.btn_online);
+//        btn_online = findViewById (R.id.btn_online);
         btn_shortlist_me = findViewById (R.id.btn_shortlist_me);
         btn_shortlist_by_me = findViewById (R.id.btn_shortlist_by_me);
         btn_profile_viewed = findViewById (R.id.btn_profile_viewed);
@@ -81,8 +85,7 @@ public class MenuActivity extends AppCompatActivity {
 
         tvName.setText (sharedPrefManager.getName ());
         tvUserCode.setText (sharedPrefManager.getUserCode ());
-//        String user_id = sharedPrefManager.getId ();
-//        getUserPhoto(user_id);
+        String user_id = sharedPrefManager.getId ();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder (GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail ()
@@ -91,11 +94,7 @@ public class MenuActivity extends AppCompatActivity {
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            String personName = account.getDisplayName();
-            String personGivenName = account.getGivenName();
-            String personFamilyName = account.getFamilyName();
             String personEmail = account.getEmail();
-            String personId = account.getId();
             Uri personPhoto = account.getPhotoUrl();
 
             assert personEmail != null;
@@ -134,12 +133,14 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity (new Intent (MenuActivity.this, SavedPreferenceActivity.class));
             }
         });
-        btn_online.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
+//        btn_online.setOnClickListener (new View.OnClickListener () {
+//            @Override
+//            public void onClick(View v) {
+////                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
+//                Intent i = new Intent (MenuActivity.this, ProfileViewedActivity.class);
+//                startActivity (i);
+//            }
+//        });
         btn_shortlist_me.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -173,7 +174,9 @@ public class MenuActivity extends AppCompatActivity {
         btn_request_received.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, RequestReceivedActivity.class));
+//               String ID = sharedPrefManager.getId ();
+//               RequestReceived(ID);
+                startActivity (new Intent (MenuActivity.this, FriendRequestList.class));
             }
         });
         btn_request_accept_by_user.setOnClickListener (new View.OnClickListener () {
@@ -255,31 +258,6 @@ public class MenuActivity extends AppCompatActivity {
                 }
             });
     }
-
-//    private void getUserPhoto(String user_id) {
-//        UserService apiService = ApiService.getService ();
-//        Call<UpdateProfileResponse> call = apiService.EditProfile (user_id);
-//        call.enqueue (new Callback<UpdateProfileResponse> () {
-//            @Override
-//            public void onResponse(Call<UpdateProfileResponse> call, Response<UpdateProfileResponse> response) {
-//                if (response.isSuccessful ()){
-////                    sharedPrefManager.setUserProfile1 (response.body ().getResult2 ().getProfile1 ());
-//
-//                    Glide.with (getApplicationContext ())
-//                        .load (response.body ().getResult2 ().getProfile1 ())
-//                        .placeholder (R.drawable.avatar)
-//                        .fitCenter ()
-//                        .into (imageView);
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UpdateProfileResponse> call, Throwable t) {
-//
-//            }
-//        });
-//    }
-
 
     public void aboutPopUp(View v){
         AppCompatButton btn_ok;

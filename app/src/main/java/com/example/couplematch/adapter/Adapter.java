@@ -15,16 +15,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.couplematch.ProfileActivity;
 import com.example.couplematch.R;
+import com.example.couplematch.UserInterface.UserService;
 import com.example.couplematch.model.Result3;
+import com.example.couplematch.response.ViewerData;
+import com.example.couplematch.response.profileViewed;
+import com.example.couplematch.service.ApiService;
+import com.example.couplematch.sharedPreference.SharedPrefManager;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     Context context;
     List<Result3> userData;
+    SharedPrefManager sharedPrefManager;
 
     public Adapter(Context context, List<Result3> userData){
         this.userData = userData;
@@ -58,6 +68,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (context, ProfileActivity.class);
+                intent.putExtra ("Id", temp.getId ());
                 intent.putExtra ("Image", temp.getProfile1 ());
                 intent.putExtra ("Name", temp.getName ());
                 intent.putExtra ("UserCode", temp.getUserCode ());
@@ -76,7 +87,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 context.startActivity (intent);
             }
         });
-        //        holder.tv_age.setText (userData.get (position).getAge ().toString ());
     }
 
     @Override
@@ -87,13 +97,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView Image_View,location;
-        TextView tv_distance,tv_location,tv_age,tv_name;
+        TextView tv_location,tv_age,tv_name;
 
         public ViewHolder(@NonNull View itemView) {
             super (itemView);
             Image_View = itemView.findViewById (R.id.Image_View);
             location = itemView.findViewById (R.id.location);
-            tv_distance = itemView.findViewById (R.id.tv_distance);
+//            tv_distance = itemView.findViewById (R.id.tv_distance);
             tv_location = itemView.findViewById (R.id.tv_location);
             tv_age = itemView.findViewById (R.id.tv_age);
             tv_name = itemView.findViewById (R.id.tv_name);

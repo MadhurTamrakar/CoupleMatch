@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         Btn_notification.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText (MainActivity.this, "No Notification", Toast.LENGTH_SHORT).show ();
+                Intent i = new Intent (MainActivity.this, NotificationActivity.class);
+                startActivity (i);
             }
         });
 
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         String user_Id = sharedPrefManager.getId ();
+        Bundle bundle = new Bundle();
+        bundle.putString("user_id", user_Id );
         GetUser (user_Id);
 
     }
@@ -76,18 +79,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetUserData> call, Response<GetUserData> response) {
                 if (response.isSuccessful ()) {
-                    progressDialog.dismiss ();
-                    recyclerView = findViewById (R.id.recyclerView);
-                    LayoutManager = new GridLayoutManager (getApplicationContext (), 2);
-                    recyclerView.setLayoutManager (LayoutManager);
-                    adapter = new Adapter (getApplicationContext (), response.body ().getResult3 ());
-                    recyclerView.setAdapter (adapter);
-                    recyclerView.setHasFixedSize (true);
-                    adapter.getItemCount ();
-                    adapter.notifyDataSetChanged ();
-                }
-                else{
-                    Toast.makeText (MainActivity.this, "Failed To Load Data", Toast.LENGTH_SHORT).show ();
+                    if(response.body ().getResult3 () != null) {
+                        progressDialog.dismiss ();
+                        recyclerView = findViewById (R.id.recyclerView);
+                        LayoutManager = new GridLayoutManager (getApplicationContext (), 2);
+                        recyclerView.setLayoutManager (LayoutManager);
+                        adapter = new Adapter (getApplicationContext (), response.body ().getResult3 ());
+                        recyclerView.setAdapter (adapter);
+                        recyclerView.setHasFixedSize (true);
+                        adapter.getItemCount ();
+                        adapter.notifyDataSetChanged ();
+                    }else{
+                        Toast.makeText (MainActivity.this, "Failed To Load Data", Toast.LENGTH_SHORT).show ();
+                    }
                 }
             }
 

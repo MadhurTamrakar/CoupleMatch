@@ -49,6 +49,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Nome");
                 startActivity (i);
+                finish ();
             }
         });
 
@@ -62,6 +63,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Government Job");
                 startActivity (i);
+                finish ();
             }
         });
 
@@ -75,6 +77,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Private Job");
                 startActivity (i);
+                finish ();
             }
         });
 
@@ -88,6 +91,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Public Sector Job");
                 startActivity (i);
+                finish ();
             }
         });
 
@@ -101,6 +105,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Retired");
                 startActivity (i);
+                finish ();
             }
         });
 
@@ -114,6 +119,7 @@ public class FatherOccupation extends AppCompatActivity {
                 i.putExtra ("PhysicalStatus", Physical_status);
                 i.putExtra ("Father_Occupation", "Business");
                 startActivity (i);
+                finish ();
             }
         });
 

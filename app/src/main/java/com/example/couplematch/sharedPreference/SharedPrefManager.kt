@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 class SharedPrefManager(activity: Activity) {
 
     private val ID = "Id"
+    private val COUNTRYCODE = "CountryCode"
     private val USERNAME = "Name"
     private val USERCODE = "UserCode"
     private val PROFILE1 = "PROFILE1"
@@ -50,6 +51,9 @@ class SharedPrefManager(activity: Activity) {
     //initial load market place verification
     fun setId(state: String) { editor?.putString(ID, state)?.apply() }
     fun getId(): String? { return pref?.getString(ID, ID) }
+
+    fun setCountryCode(state: String) { editor?.putString(COUNTRYCODE, state)?.apply() }
+    fun getCountryCode(): String? { return pref?.getString(COUNTRYCODE, COUNTRYCODE) }
 
     fun setUserCode(state: String) { editor?.putString(USERCODE, state)?.apply() }
     fun getUserCode(): String? { return pref?.getString(USERCODE, USERCODE) }

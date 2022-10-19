@@ -46,6 +46,7 @@ public class PhysicalStatusActivity extends AppCompatActivity {
                 i.putExtra ("Smoke",Smoke);
                 i.putExtra ("PhysicalStatus","Physically Challenged");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Mentally.setOnClickListener (new View.OnClickListener () {
@@ -57,6 +58,7 @@ public class PhysicalStatusActivity extends AppCompatActivity {
                 i.putExtra ("Smoke",Smoke);
                 i.putExtra ("PhysicalStatus","Mentally Challenged");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Disabled.setOnClickListener (new View.OnClickListener () {
@@ -68,6 +70,7 @@ public class PhysicalStatusActivity extends AppCompatActivity {
                 i.putExtra ("Smoke",Smoke);
                 i.putExtra ("PhysicalStatus","Disable");
                 startActivity (i);
+                finish ();
             }
         });
         btn_fit.setOnClickListener (new View.OnClickListener () {
@@ -79,6 +82,7 @@ public class PhysicalStatusActivity extends AppCompatActivity {
                 i.putExtra ("Smoke",Smoke);
                 i.putExtra ("PhysicalStatus","Physically Fit");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Healthy.setOnClickListener (new View.OnClickListener () {
@@ -90,9 +94,8 @@ public class PhysicalStatusActivity extends AppCompatActivity {
                 i.putExtra ("Smoke",Smoke);
                 i.putExtra ("PhysicalStatus","Healthy");
                 startActivity (i);
+                finish ();
             }
         });
-
-
     }
 }

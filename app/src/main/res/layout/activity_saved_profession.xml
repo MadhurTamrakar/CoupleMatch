@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".SavedProfession">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Btn_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/profession"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Profession"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/any"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Any"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Business"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Business"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Business"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Government"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/any" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Government"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Government Job"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Private"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Business" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Private"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Private Job"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Public"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Government" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Public"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Public Sector Job"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_IAS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Private" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_IAS"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="IAS"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Advocate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Public" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Advocate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Advocate"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Doctor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_IAS" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Doctor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Doctor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Engineer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Advocate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Engineer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Software Engineer"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Not_working"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Doctor" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Not_working"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Not Working "
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Other"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Engineer" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Other"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_selected"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:text="Other"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Not_working" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

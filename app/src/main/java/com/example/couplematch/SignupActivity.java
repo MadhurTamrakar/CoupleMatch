@@ -2,11 +2,14 @@ package com.example.couplematch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +26,7 @@ import com.example.couplematch.service.ApiService;
 import com.example.couplematch.sharedPreference.SharedPrefManager;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.hbb20.CountryCodePicker;
 
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
@@ -31,6 +35,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,6 +52,7 @@ public class SignupActivity extends AppCompatActivity {
     RadioButton radioButton;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
+    CountryCodePicker ccp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,20 @@ public class SignupActivity extends AppCompatActivity {
         editText = findViewById (R.id.editText);
         tv_age = findViewById (R.id.tv_age);
         ed_number = findViewById (R.id.ed_number);
+        ccp = findViewById (R.id.ccp);
+
+//        btn_register.setEnabled (false);
+
+        if (ActivityCompat.checkSelfPermission (SignupActivity.this,
+            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//            btn_register.setEnabled (true);
+        } else {
+            ActivityCompat.requestPermissions (SignupActivity.this
+                , new String[]{Manifest.permission.ACCESS_FINE_LOCATION
+                    , Manifest.permission.ACCESS_COARSE_LOCATION}
+                , 44);
+        }
+
         radioGroup = (RadioGroup) findViewById (R.id.radio);
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
@@ -76,16 +97,22 @@ public class SignupActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                Pattern ptrn = Pattern.compile("(\\w+)\\s+(\\w+)");
+                Matcher matcher = ptrn.matcher("FirstName  LastName");
+
                 String name = editText.getText ().toString ();
                 String mobile = ed_number.getText ().toString ().trim ();
                 String dob = dateButton.getText ().toString ().trim ();
                 String age = tv_age.getText ().toString ().trim ();
+                String countryCode = ccp.getSelectedCountryCode ();
+
                 final String gender;
 
                 sharedPrefManager.setName (name);
                 sharedPrefManager.setUserMobile (mobile);
                 sharedPrefManager.setUserDob (dob);
                 sharedPrefManager.setUserAge (age);
+                sharedPrefManager.setCountryCode (countryCode);
 
                 int selectedId = radioGroup.getCheckedRadioButtonId ();
                 radioButton = (RadioButton) findViewById (selectedId);
@@ -93,16 +120,14 @@ public class SignupActivity extends AppCompatActivity {
 
                 sharedPrefManager.setUserGender (gender);
 
-                if (name.equals ("") || name.contains (" ")) {
-                    editText.setError ("Enter Your Full Name");
+                if (name.isEmpty ()) {
+                    editText.setError ("Please Enter Your Name");
                 }
-                if (mobile.length () < 10) {
-                    ed_number.setError ("Enter Correct Phone Number");
+                else if (mobile.length () < 10) {
+                    ed_number.setError ("Please Enter Correct Mobile Number");
                 } else {
-                    startActivity (new Intent (SignupActivity.this, ReligionActivity.class));
-                    finish ();
+                    registerUser (name, mobile, gender, dob, age);
                 }
-                registerUser (name, mobile, gender, dob, age);
             }
         });
     }
@@ -115,6 +140,8 @@ public class SignupActivity extends AppCompatActivity {
             public void onResponse(Call<SignUpResponse> responseCall, Response<SignUpResponse> response) {
                 if (response.isSuccessful ()) {
                     sharedPrefManager.setId (response.body ().getResult ().getId ());
+                    startActivity (new Intent (SignupActivity.this, ReligionActivity.class));
+                    finish ();
 
                 } else {
                     String message = "Get Yourself Register";
@@ -150,8 +177,8 @@ public class SignupActivity extends AppCompatActivity {
                 c.set(Calendar.YEAR, year);
                 c.set(Calendar.MONTH, month);
                 c.set(Calendar.DAY_OF_MONTH, day);
-                String date = makeDateString (day, month, year);
-                dateButton.setText (date);
+//                String date = makeDateString (day, month, year);
+                dateButton.setText (day + "/" + (month+1) + "/" + year);
                 tv_age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
             }
         };

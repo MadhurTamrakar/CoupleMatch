@@ -44,6 +44,7 @@ public class SmokeActivity extends AppCompatActivity {
                 i.putExtra ("Drink", Drink);
                 i.putExtra ("Smoke","Occasionally");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Regular.setOnClickListener (new View.OnClickListener () {
@@ -54,6 +55,7 @@ public class SmokeActivity extends AppCompatActivity {
                 i.putExtra ("Drink", Drink);
                 i.putExtra ("Smoke","Regular");
                 startActivity (i);
+                finish ();
             }
         });
         btn_zero_Tolerance.setOnClickListener (new View.OnClickListener () {
@@ -64,6 +66,7 @@ public class SmokeActivity extends AppCompatActivity {
                 i.putExtra ("Drink", Drink);
                 i.putExtra ("Smoke","Zero Tolerance");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Definitely.setOnClickListener (new View.OnClickListener () {
@@ -74,6 +77,7 @@ public class SmokeActivity extends AppCompatActivity {
                 i.putExtra ("Drink", Drink);
                 i.putExtra ("Smoke","Definitely");
                 startActivity (i);
+                finish ();
             }
         });
         btn_Never.setOnClickListener (new View.OnClickListener () {
@@ -84,6 +88,7 @@ public class SmokeActivity extends AppCompatActivity {
                 i.putExtra ("Drink", Drink);
                 i.putExtra ("Smoke","Never");
                 startActivity (i);
+                finish ();
             }
         });
     }
