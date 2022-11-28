@@ -85,7 +85,7 @@ public class EditProfileActivity extends AppCompatActivity {
         tvmobile = findViewById (R.id.mobile);
         tvdob = findViewById (R.id.dob);
         tvgender = findViewById (R.id.gender);
-        tvage = findViewById (R.id.age);
+//        tvage = findViewById (R.id.age);
         tvreligion = findViewById (R.id.religion);
         tvdosh = findViewById (R.id.dosh);
         tvmarital_status = findViewById (R.id.marital_status);
@@ -111,6 +111,90 @@ public class EditProfileActivity extends AppCompatActivity {
         imageView6 = findViewById (R.id.imageView6);
 
         Saved = new Dialog (this);
+
+        if(sharedPrefManager.getUserProfile1 () != null){
+        Glide.with (getApplicationContext ())
+            .load (sharedPrefManager.getUserProfile1 ())
+            .placeholder (R.drawable.avatar)
+            .centerCrop ()
+            .into (imageView1);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
+
+        if(sharedPrefManager.getUserProfile2 () != null){
+            Glide.with (getApplicationContext ())
+                .load (sharedPrefManager.getUserProfile2 ())
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView2);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
+
+        if(sharedPrefManager.getUserProfile3 () != null){
+            Glide.with (getApplicationContext ())
+                .load (sharedPrefManager.getUserProfile3 ())
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView3);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
+
+        if(sharedPrefManager.getUserProfile4 () != null){
+            Glide.with (getApplicationContext ())
+                .load (sharedPrefManager.getUserProfile4 ())
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView4);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
+
+        if(sharedPrefManager.getUserProfile5 () != null){
+            Glide.with (getApplicationContext ())
+                .load (sharedPrefManager.getUserProfile5 ())
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView5);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
+
+        if(sharedPrefManager.getUserProfile6 () != null){
+            Glide.with (getApplicationContext ())
+                .load (sharedPrefManager.getUserProfile6 ())
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView6);
+        }else {
+            Glide.with (getApplicationContext ())
+                .load (R.drawable.avatar)
+                .placeholder (R.drawable.avatar)
+                .centerCrop ()
+                .into (imageView1);
+        }
 
         Refresh.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -211,14 +295,40 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         tvname.setText (Name);
+
         if(Countrycode.isEmpty ()){
             ccp.setText ("");
         }else{
             ccp.setText ("+91-");
         }
+//
+//        if(Income.isEmpty ()){
+//            tvincome.setText ("Add >");
+//        }else{
+//            tvincome.setText (Income);
+//        }
+//
+//        if(Drink.isEmpty ()){
+//            tvdrink.setText ("Add >");
+//        }else{
+//            tvdrink.setText (Drink);
+//        }
+//
+//        if(Smoke.isEmpty ()){
+//            tvsmoke.setText ("Add >");
+//        }else{
+//            tvsmoke.setText (Smoke);
+//        }
+//
+//        if(PhysicalStatus.isEmpty ()){
+//            tvphysical_status.setText ("Add >");
+//        }else{
+//            tvphysical_status.setText (PhysicalStatus);
+//        }
+
         tvgender.setText (Gender);
         tvdob.setText (Dob);
-        tvage.setText (Age);
+//        tvage.setText (Age);
         tvmobile.setText (Mobile);
         tvreligion.setText (Religion);
         tvdosh.setText (Dosh);
@@ -252,36 +362,36 @@ public class EditProfileActivity extends AppCompatActivity {
                     progressDialog.dismiss ();
                     assert response.body () != null;
 
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile1 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView1);
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile2 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView2);
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile3 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView3);
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile4 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView4);
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile5 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView5);
-                    Glide.with (getApplicationContext ())
-                        .load (response.body ().getResult2 ().getProfile6 ())
-                        .placeholder (R.drawable.avatar)
-                        .centerCrop ()
-                        .into (imageView6);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile1 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView1);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile2 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView2);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile3 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView3);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile4 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView4);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile5 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView5);
+//                    Glide.with (getApplicationContext ())
+//                        .load (response.body ().getResult2 ().getProfile6 ())
+//                        .placeholder (R.drawable.avatar)
+//                        .centerCrop ()
+//                        .into (imageView6);
 
                     tved_about.setText (response.body ().getResult2 ().getAboutMe ());
                     tved_preference.setText (response.body ().getResult2 ().getPartnerPreference ());
@@ -313,7 +423,7 @@ public class EditProfileActivity extends AppCompatActivity {
         Mobile = tvmobile.getText ().toString (); MaritalStatus = tvmarital_status.getText ().toString (); Drink = tvdrink.getText ().toString ();
         Email = tvemail.getText ().toString (); Diet = tvdiet.getText ().toString (); Smoke = tvsmoke.getText ().toString ();
         Gender = tvgender.getText ().toString (); Height = tvheight.getText ().toString (); PhysicalStatus = tvphysical_status.getText ().toString ();
-        Age = tvage.getText ().toString (); Education = tveducation.getText ().toString (); About_me = tved_about.getText ().toString ();
+        Education = tveducation.getText ().toString (); About_me = tved_about.getText ().toString ();
         Dob = tvdob.getText ().toString (); Professional = tvprofession.getText ().toString (); Partner_Preference = tved_preference.getText ().toString ();
         Religion = tvreligion.getText ().toString (); Income = tvincome.getText ().toString (); Father_Occupation = tvfather_occupation.getText ().toString ();
         Mother_Occupation = tvmother_occupation.getText ().toString ();

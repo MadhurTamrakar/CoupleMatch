@@ -43,7 +43,7 @@ public class MyAnimation extends Animation {
             return;
         }
 
-        float angleDeg = (interpolatedTime * 5760f + 40) % 1440;
+        float angleDeg = (interpolatedTime * 3760f + 80) % 4000;
         float angleRad = (float) Math.toRadians(angleDeg);
 
         // r = radius, cx and cy = center point, a = angle (radians)

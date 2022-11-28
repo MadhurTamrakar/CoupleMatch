@@ -97,7 +97,6 @@ public class Add_Photo_Activity extends AppCompatActivity {
             }
         });
 
-
         image1.setOnClickListener (new View.OnClickListener () {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -170,6 +169,22 @@ public class Add_Photo_Activity extends AppCompatActivity {
                 }
             }
         });
+
+        Continue_btn.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                String user_id = sharedPrefManager.getId ();
+                Intent i = new Intent (Add_Photo_Activity.this, Welcome_Splash_Activity.class);
+                startActivity (i);
+                finish ();
+                if (image1 != null || image2 != null || image3 != null || image4 != null || image5 != null || image6 != null) {
+                    UploadImage (user_id);
+                } else {
+                    Toast.makeText (Add_Photo_Activity.this, "upload all Photos", Toast.LENGTH_SHORT).show ();
+                }
+
+            }
+        });
     }
 
     @Override
@@ -188,7 +203,6 @@ public class Add_Photo_Activity extends AppCompatActivity {
                 e.printStackTrace ();
             }
             bitmap.compress (Bitmap.CompressFormat.JPEG, 100, outputStream);
-
             image1.setImageBitmap (bitmap);
         }
         if (requestCode == PHOTO2 && data != null) {
@@ -264,12 +278,14 @@ public class Add_Photo_Activity extends AppCompatActivity {
     }
 
     public void UploadImage(String User_id) {
+
         File file = new File (path);
         File file2 = new File (path2);
         File file3 = new File (path3);
         File file4 = new File (path4);
         File file5 = new File (path5);
         File file6 = new File (path6);
+
 
         RequestBody requestFile = RequestBody.create (MediaType.parse ("multipart/form-data"), file);
         MultipartBody.Part body = MultipartBody.Part.createFormData ("profile1", file.getName (), requestFile);
@@ -301,6 +317,8 @@ public class Add_Photo_Activity extends AppCompatActivity {
 
                     } else {
                     }
+                }else{
+                    Toast.makeText (Add_Photo_Activity.this, "Please Check network connection", Toast.LENGTH_SHORT).show ();
                 }
             }
 

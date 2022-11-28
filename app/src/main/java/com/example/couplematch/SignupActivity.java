@@ -46,13 +46,15 @@ public class SignupActivity extends AppCompatActivity {
 
     SharedPrefManager sharedPrefManager;
     Button btn_register;
-    TextView Btn_back, tv_age;
+    TextView Btn_back, tv_age, DOB;
     EditText editText, ed_number;
     RadioGroup radioGroup;
-    RadioButton radioButton;
+    RadioButton radioButton, radioFemale, radioMale;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     CountryCodePicker ccp;
+    private static final int allowedDOB = 18;
+    private static final int allowedAge = 21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,27 +65,14 @@ public class SignupActivity extends AppCompatActivity {
         initDatePicker ();
 
         dateButton = findViewById (R.id.datePickerButton);
-        dateButton.setText (getTodayDate ());
-
+        radioMale = findViewById (R.id.radioMale);
+        radioFemale = findViewById (R.id.radioFemale);
         btn_register = findViewById (R.id.btn_register);
         Btn_back = findViewById (R.id.Btn_back);
         editText = findViewById (R.id.editText);
         tv_age = findViewById (R.id.tv_age);
         ed_number = findViewById (R.id.ed_number);
         ccp = findViewById (R.id.ccp);
-
-//        btn_register.setEnabled (false);
-
-        if (ActivityCompat.checkSelfPermission (SignupActivity.this,
-            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-//            btn_register.setEnabled (true);
-        } else {
-            ActivityCompat.requestPermissions (SignupActivity.this
-                , new String[]{Manifest.permission.ACCESS_FINE_LOCATION
-                    , Manifest.permission.ACCESS_COARSE_LOCATION}
-                , 44);
-        }
-
         radioGroup = (RadioGroup) findViewById (R.id.radio);
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
@@ -97,14 +86,18 @@ public class SignupActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Pattern ptrn = Pattern.compile("(\\w+)\\s+(\\w+)");
-                Matcher matcher = ptrn.matcher("FirstName  LastName");
+                Pattern ptrn = Pattern.compile ("(\\w+)\\s+(\\w+)");
+                Matcher matcher = ptrn.matcher ("FirstName  LastName");
 
                 String name = editText.getText ().toString ();
                 String mobile = ed_number.getText ().toString ().trim ();
                 String dob = dateButton.getText ().toString ().trim ();
                 String age = tv_age.getText ().toString ().trim ();
                 String countryCode = ccp.getSelectedCountryCode ();
+
+//                String[] arr = name.split(" ");
+//                String fname = arr[0];
+//                String lname = arr[1];
 
                 final String gender;
 
@@ -114,6 +107,9 @@ public class SignupActivity extends AppCompatActivity {
                 sharedPrefManager.setUserAge (age);
                 sharedPrefManager.setCountryCode (countryCode);
 
+                editText.setText (sharedPrefManager.getName ());
+                ed_number.setText (sharedPrefManager.getUserMobile ());
+
                 int selectedId = radioGroup.getCheckedRadioButtonId ();
                 radioButton = (RadioButton) findViewById (selectedId);
                 gender = radioButton.getText ().toString ();
@@ -122,12 +118,14 @@ public class SignupActivity extends AppCompatActivity {
 
                 if (name.isEmpty ()) {
                     editText.setError ("Please Enter Your Name");
-                }
-                else if (mobile.length () < 10) {
-                    ed_number.setError ("Please Enter Correct Mobile Number");
+                    editText.requestFocus ();
+                } else if (mobile.length () < 10) {
+                    ed_number.setError ("Please Enter Mobile Number");
+                    ed_number.requestFocus ();
                 } else {
                     registerUser (name, mobile, gender, dob, age);
                 }
+
             }
         });
     }
@@ -158,30 +156,33 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private String getTodayDate() {
-        Calendar cal = Calendar.getInstance ();
-        int year = cal.get (Calendar.YEAR);
-        int month = cal.get (Calendar.MONTH);
-        month = month + 1;
-        int day = cal.get (Calendar.DAY_OF_MONTH);
-        return makeDateString (day, month, year);
-
-    }
+//    private String getTodayDate() {
+//        Calendar cal = Calendar.getInstance ();
+//        int year = cal.get (Calendar.YEAR);
+//        int month = cal.get (Calendar.MONTH);
+//        month = month + 1;
+//        int day = cal.get (Calendar.DAY_OF_MONTH);
+//        return makeDateString (day, month, year);
+//
+//    }
 
     @SuppressLint("SetTextI18n")
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener () {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                Calendar c = Calendar.getInstance();
-                c.set(Calendar.YEAR, year);
-                c.set(Calendar.MONTH, month);
-                c.set(Calendar.DAY_OF_MONTH, day);
+                Calendar c = Calendar.getInstance ();
+                c.set (Calendar.YEAR, year);
+                c.set (Calendar.MONTH, month);
+                c.set (Calendar.DAY_OF_MONTH, day);
 //                String date = makeDateString (day, month, year);
-                dateButton.setText (day + "/" + (month+1) + "/" + year);
-                tv_age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
+                dateButton.setText (day + "/" + (month + 1) + "/" + year);
+                tv_age.setText (Integer.toString (calculateAge (c.getTimeInMillis ())));
             }
         };
+
+        radioMale = findViewById (R.id.radioMale);
+        radioFemale = findViewById (R.id.radioFemale);
 
         Calendar cal = Calendar.getInstance ();
         int year = cal.get (Calendar.YEAR);
@@ -191,18 +192,26 @@ public class SignupActivity extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog = new DatePickerDialog (this, style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis ());
+        datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis () - 568025136000L);
+
+//...........Calculate age less x no. (1000 * 60 * 60 * 24 * 365.25 * min age)..................\\
+
+//        if (radioMale.isChecked ()) {
+//            Toast.makeText (this, "male", Toast.LENGTH_SHORT).show ();
+////            datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis () - 662705196000L);
+//        }
+//        else {
+//            Toast.makeText (this, "Female", Toast.LENGTH_SHORT).show ();
+//            datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis () - 568025136000L);
+//        }
 
     }
 
     private int calculateAge(long timeInMillis) {
-        Calendar dob = Calendar.getInstance();
-        dob.setTimeInMillis(timeInMillis);
-        Calendar today = Calendar.getInstance();
-        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-        if(today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)){
-            age--;
-        }
+        Calendar dob = Calendar.getInstance ();
+        dob.setTimeInMillis (timeInMillis);
+        Calendar today = Calendar.getInstance ();
+        int age = today.get (Calendar.YEAR) - dob.get (Calendar.YEAR);
         return age;
     }
 

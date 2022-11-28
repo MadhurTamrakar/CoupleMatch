@@ -32,8 +32,8 @@ import retrofit2.Response;
 public class ProfileActivity extends AppCompatActivity {
 
     ImageView profileImage;
-    TextView text_name, userCode, text_age, Btn_menu, UserName, text_location, religion_text, marital_status_text, Height_text, Diet_text, Education_text, profession_text, drink_text, live_in_text, smoke_text, income_text, about_text, about_partner_text, Btn_notification;
-    String Id, Name, UserCode, Age, Religion, Marital_Status, Height, Diet, Education, Profession, About_Me, Partner_Preference, City;
+    TextView btn_MorePhotos,text_name, userCode, text_age, Btn_menu, UserName, text_location, religion_text, marital_status_text, Height_text, Diet_text, Education_text, profession_text, drink_text, live_in_text, smoke_text, income_text, about_text, about_partner_text, Btn_notification;
+    String Id, Name, UserCode, Age, Religion, Marital_Status, Height, Diet, Education, Profession, About_Me, Partner_Preference, City , image2, image3, image4, image5, image6;
     AppCompatButton connect_btn, block_btn, skip_btn, shortlist_btn;
     SharedPrefManager sharedPrefManager;
 
@@ -46,6 +46,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         Id = getIntent ().getStringExtra ("Id");
         Name = getIntent ().getStringExtra ("Name");
+        image2= getIntent ().getStringExtra ("Image2");
+        image3= getIntent ().getStringExtra ("Image3");
+        image4= getIntent ().getStringExtra ("Image4");
+        image5= getIntent ().getStringExtra ("Image5");
+        image6= getIntent ().getStringExtra ("Image6");
         UserCode = getIntent ().getStringExtra ("UserCode");
         Religion = getIntent ().getStringExtra ("Religion");
         Marital_Status = getIntent ().getStringExtra ("Marital_Status");
@@ -59,6 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
         Age = getIntent ().getStringExtra ("Age");
 
         Btn_menu = findViewById (R.id.Btn_menu);
+        btn_MorePhotos = findViewById (R.id.btn_MorePhotos);
         text_location = findViewById (R.id.text_location);
         Btn_notification = findViewById (R.id.Btn_notification);
         profileImage = findViewById (R.id.profileImage);
@@ -97,12 +103,26 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        btn_MorePhotos.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (ProfileActivity.this, MorePhotoActivity.class);
+                i.putExtra ("Image2", image2);
+                i.putExtra ("Image3", image3);
+                i.putExtra ("Image4", image4);
+                i.putExtra ("Image5", image5);
+                i.putExtra ("Image6", image6);
+                startActivity (i);
+            }
+        });
+
         shortlist_btn.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
                 String user_id = sharedPrefManager.getId ();
                 String sort_id = Id;
                 SortList (user_id, sort_id);
+                shortlist_btn.setText ("Shortlisted");
 //                Toast.makeText(getBaseContext(), "Profile Added To Shortlist" , Toast.LENGTH_SHORT ).show();
 //                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
 //                startActivity (intent);
@@ -125,6 +145,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String user_id = sharedPrefManager.getId ();
                 String block_id = Id;
                 Block (user_id, block_id);
+                block_btn.setText ("Blocked");
 //                Intent intent = new Intent (ProfileActivity.this, MainActivity.class);
 //                startActivity (intent);
 //                finish ();
@@ -137,7 +158,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String user_id = sharedPrefManager.getId ();
                 String request_id = Id;
                 Request_Send (user_id, request_id);
-                connect_btn.setText ("Request Send");
+                connect_btn.setText ("Cancel Request");
             }
         });
 
@@ -166,7 +187,7 @@ public class ProfileActivity extends AppCompatActivity {
         Education_text.setText (Education);
         profession_text.setText (Profession);
         about_text.setText (About_Me);
-        about_partner_text.setText (Partner_Preference);
+        live_in_text.setText (City);
         text_location.setText (City);
         text_age.setText (Age);
     }
@@ -238,7 +259,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RequestSend> call, Response<RequestSend> response) {
                 if (response.isSuccessful ()) {
-                    Toast.makeText (getBaseContext (), "Request Send", Toast.LENGTH_SHORT).show ();
+//                    Toast.makeText (getBaseContext (), "Request Send", Toast.LENGTH_SHORT).show ();
                 } else {
                     Toast.makeText (getBaseContext (), "Error", Toast.LENGTH_SHORT).show ();
                 }

@@ -145,7 +145,7 @@ public class RequestReceivedActivity extends AppCompatActivity {
                     Toast.makeText (RequestReceivedActivity.this, "Request Rejected", Toast.LENGTH_SHORT).show ();
                     cancel_btn.setTextColor (Color.WHITE);
                     cancel_btn.setBackgroundColor (Color.RED);
-                    startActivity (new Intent (RequestReceivedActivity.this, FriendRequestList.class));
+                    startActivity (new Intent (RequestReceivedActivity.this, ProfileViewedActivity.class));
                     finish ();
                 }
             }
@@ -167,9 +167,13 @@ public class RequestReceivedActivity extends AppCompatActivity {
                     Toast.makeText (RequestReceivedActivity.this, "Request Accepted", Toast.LENGTH_SHORT).show ();
                     accept_btn.setText("Done");
                     accept_btn.setTextColor (Color.WHITE);
-                    accept_btn.setBackgroundColor (Color.GREEN);
-                    startActivity (new Intent (RequestReceivedActivity.this, FriendRequestList.class));
+
+                    Intent i = new Intent (RequestReceivedActivity.this, MatchActivity.class);
+                    i.putExtra ("Image", Image);
+                    startActivity (i);
                     finish ();
+//                    startActivity (new Intent (RequestReceivedActivity.this, MatchActivity.class));
+//                    finish ();
                 }
             }
 

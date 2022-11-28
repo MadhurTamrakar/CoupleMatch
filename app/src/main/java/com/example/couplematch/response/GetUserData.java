@@ -16,6 +16,9 @@ public class GetUserData {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("total")
+    @Expose
+    private Integer total;
 
     public List<Result3> getResult3() {
         return result3;
@@ -40,4 +43,8 @@ public class GetUserData {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Integer getTotal() {return total;}
+
+    public void setTotal(Integer total) {this.total = total;}
 }

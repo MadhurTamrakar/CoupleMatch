@@ -106,6 +106,9 @@ public class Result3 {
     @SerializedName("date_time")
     @Expose
     private String dateTime;
+    @SerializedName("short_name")
+    @Expose
+    private String shortName;
 
     public String getId() {
         return id;
@@ -374,4 +377,9 @@ public class Result3 {
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
+
+    public String getShortName() {return shortName;}
+
+    public void setShortName(String shortName) {this.shortName = shortName;}
+
 }

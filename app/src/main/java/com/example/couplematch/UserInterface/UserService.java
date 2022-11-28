@@ -12,7 +12,9 @@ import com.example.couplematch.response.ConfirmRequest;
 import com.example.couplematch.response.DeleteData;
 import com.example.couplematch.response.GetUserData;
 import com.example.couplematch.response.HelpSupport;
+import com.example.couplematch.response.NotificationData;
 import com.example.couplematch.response.PhotoResponse;
+import com.example.couplematch.response.ProgressData;
 import com.example.couplematch.response.RequestReceived;
 import com.example.couplematch.response.RequestSend;
 import com.example.couplematch.response.RequestSendByMe;
@@ -116,6 +118,11 @@ public interface UserService {
     Call<UpdateProfileResponse> EditProfile(
         @Field("user_id") String user_id);
 
+    @FormUrlEncoded
+    @POST("progress_bar")
+    Call<ProgressData> progress(
+        @Field("user_id") String user_id);
+
     @GET("get_data_user_code")
     Call<UniqueUserData> GetUniqueUserData(
         @Query("user_code") String user_code);
@@ -123,6 +130,11 @@ public interface UserService {
     @FormUrlEncoded
     @POST("account_delete")
     Call<DeleteData> DeleteAccount(
+        @Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("get_all_notification")
+    Call<NotificationData> Notification(
         @Field("user_id") String user_id);
 
     @FormUrlEncoded

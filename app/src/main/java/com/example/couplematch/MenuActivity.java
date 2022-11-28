@@ -17,12 +17,14 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.couplematch.UserInterface.UserService;
 import com.example.couplematch.response.PhotoResponse;
+import com.example.couplematch.response.ProgressData;
 import com.example.couplematch.response.RequestReceived;
 import com.example.couplematch.response.RequestSend;
 import com.example.couplematch.response.UpdateProfileResponse;
@@ -43,12 +45,13 @@ import retrofit2.Response;
 public class MenuActivity extends AppCompatActivity {
 
     SharedPrefManager sharedPrefManager;
-    TextView Btn_back, delete_account_btn,btn_edit_profile, btn_logout, tvName, tvUserCode;
-    LinearLayout btn_home, btn_search, btn_saved, btn_online, btn_shortlist_me, btn_shortlist_by_me, btn_profile_viewed, btn_profile_viewer, btn_request_send, btn_request_received, btn_request_accept_by_user, btn_request_accept_by_me, btn_request_cancel_by_user, btn_request_cancel_by_me ;
+    TextView Btn_back, delete_account_btn,btn_edit_profile, btn_logout, tvName, tvUserCode, Progress_completed;
+    LinearLayout btn_home, btn_search, btn_saved, btn_download_kundli, btn_online, btn_shortlist_me, btn_shortlist_by_me, btn_profile_viewed, btn_profile_viewer, btn_request_send, btn_request_received, btn_request_accept_by_user, btn_request_accept_by_me, btn_request_cancel_by_user, btn_request_cancel_by_me ;
     LinearLayout btn_share_app, btn_contact_us, btn_Help_support;
     Dialog AboutPopUp;
     CircularImageView imageView;
     GoogleSignInClient mGoogleSignInClient;
+    ProgressBar Completion_bar;
 
     @SuppressLint("CheckResult")
     @Override
@@ -62,17 +65,7 @@ public class MenuActivity extends AppCompatActivity {
         btn_home = findViewById (R.id.btn_home);
         btn_search = findViewById (R.id.btn_search);
         btn_saved = findViewById (R.id.btn_saved);
-//        btn_online = findViewById (R.id.btn_online);
         btn_shortlist_me = findViewById (R.id.btn_shortlist_me);
-        btn_shortlist_by_me = findViewById (R.id.btn_shortlist_by_me);
-        btn_profile_viewed = findViewById (R.id.btn_profile_viewed);
-        btn_profile_viewer = findViewById (R.id.btn_profile_viewer);
-        btn_request_send = findViewById (R.id.btn_request_send);
-        btn_request_received = findViewById (R.id.btn_request_received);
-        btn_request_accept_by_user = findViewById (R.id.btn_request_accept_by_user);
-        btn_request_accept_by_me = findViewById (R.id.btn_request_accept_by_me);
-        btn_request_cancel_by_user = findViewById (R.id.btn_request_cancel_by_user);
-        btn_request_cancel_by_me = findViewById (R.id.btn_request_cancel_by_me);
         btn_share_app = findViewById (R.id.btn_share_app);
         btn_contact_us = findViewById (R.id.btn_contact_us);
         btn_Help_support = findViewById (R.id.btn_Help_support);
@@ -82,10 +75,16 @@ public class MenuActivity extends AppCompatActivity {
         imageView =  findViewById (R.id.imageView);
         tvName = findViewById (R.id.tvName);
         tvUserCode = findViewById (R.id.tvUserCode);
+        btn_download_kundli = findViewById (R.id.btn_download_kundli);
+        Progress_completed = findViewById (R.id.Progress_completed);
+        Completion_bar = findViewById (R.id.Completion_bar);
 
         tvName.setText (sharedPrefManager.getName ());
         tvUserCode.setText (sharedPrefManager.getUserCode ());
         String user_id = sharedPrefManager.getId ();
+
+        EditProfile(user_id);
+        progress(user_id);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder (GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail ()
@@ -95,17 +94,16 @@ public class MenuActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
             String personEmail = account.getEmail();
-            Uri personPhoto = account.getPhotoUrl();
+//            Uri personPhoto = account.getPhotoUrl();
 
             assert personEmail != null;
             sharedPrefManager.setUserEmail (personEmail);
-            Glide.with (getApplicationContext ())
-                .load (personPhoto)
-                .placeholder (R.drawable.avatar)
-                .fitCenter ()
-                .into (imageView);
+//            Glide.with (getApplicationContext ())
+//                .load (personPhoto)
+//                .placeholder (R.drawable.avatar)
+//                .fitCenter ()
+//                .into (imageView);
         }
-
 
         AboutPopUp = new Dialog (this);
 
@@ -133,76 +131,23 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity (new Intent (MenuActivity.this, SavedPreferenceActivity.class));
             }
         });
-//        btn_online.setOnClickListener (new View.OnClickListener () {
-//            @Override
-//            public void onClick(View v) {
-////                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-//                Intent i = new Intent (MenuActivity.this, ProfileViewedActivity.class);
-//                startActivity (i);
-//            }
-//        });
+
         btn_shortlist_me.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
                 startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
             }
         });
-        btn_shortlist_by_me.setOnClickListener (new View.OnClickListener () {
+
+        btn_download_kundli.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
+                Uri uri = Uri.parse("https://progressiveaidata.in/couple_match/PdfController/pdf_print?user_id="+ user_id); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
-        btn_profile_viewed.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_profile_viewer.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_request_send.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_request_received.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-//               String ID = sharedPrefManager.getId ();
-//               RequestReceived(ID);
-                startActivity (new Intent (MenuActivity.this, FriendRequestList.class));
-            }
-        });
-        btn_request_accept_by_user.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_request_accept_by_me.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_request_cancel_by_user.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
-        btn_request_cancel_by_me.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                startActivity (new Intent (MenuActivity.this, ProfileViewedActivity.class));
-            }
-        });
+
         btn_share_app.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -219,6 +164,11 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity (new Intent (MenuActivity.this, DeleteMyAccountActivity.class));
+//                switch (v.getId ()) {
+//                    case R.id.delete_account_btn:
+//                        signOut ();
+//                        break;
+//                }
             }
         });
         btn_Help_support.setOnClickListener (new View.OnClickListener () {
@@ -243,6 +193,80 @@ public class MenuActivity extends AppCompatActivity {
                         signOut ();
                         break;
                 }
+            }
+        });
+    }
+
+    private void progress(String user_id) {
+        UserService apiService = ApiService.getService ();
+        Call<ProgressData> Call = apiService.progress (user_id);
+        Call.enqueue (new Callback<ProgressData> () {
+            @Override
+            public void onResponse(retrofit2.Call<ProgressData> call, Response<ProgressData> response) {
+                if (response.isSuccessful ()) {
+                    assert response.body () != null;
+                    if(response.body ().getProgress () != null){
+                        Progress_completed.setText ("Profile Completion " + response.body ().getProgress () + "%");
+                        Completion_bar.setProgress(response.body ().getProgress ());
+                    }else {
+                        Progress_completed.setText ("Profile Completion 80%");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<ProgressData> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void EditProfile(String user_id) {
+        UserService apiService = ApiService.getService ();
+        Call<UpdateProfileResponse> Call = apiService.EditProfile (user_id);
+        Call.enqueue (new Callback<UpdateProfileResponse> () {
+
+            @Override
+            public void onResponse(retrofit2.Call<UpdateProfileResponse> call, Response<UpdateProfileResponse> response) {
+                if (response.isSuccessful ()) {
+                    assert response.body () != null;
+
+                    if(response.body ().getResult2 ().getProfile1 () != null ){
+                    Glide.with (getApplicationContext ())
+                        .load (response.body ().getResult2 ().getProfile1 ())
+                        .placeholder (R.drawable.avatar)
+                        .centerCrop ()
+                        .into (imageView);
+                    sharedPrefManager.setUserProfile1 (response.body ().getResult2 ().getProfile1 ());}
+
+                    if(response.body ().getResult2 ().getProfile2 () != null){
+                    sharedPrefManager.setUserProfile2 (response.body ().getResult2 ().getProfile2 ());}
+
+                    if(response.body ().getResult2 ().getProfile3 () != null){
+                    sharedPrefManager.setUserProfile3 (response.body ().getResult2 ().getProfile3 ());}
+
+                    if(response.body ().getResult2 ().getProfile4 () != null){
+                    sharedPrefManager.setUserProfile4 (response.body ().getResult2 ().getProfile4 ());}
+
+                    if(response.body ().getResult2 ().getProfile5 () != null){
+                    sharedPrefManager.setUserProfile5 (response.body ().getResult2 ().getProfile5 ());}
+
+                    if(response.body ().getResult2 ().getProfile6 () != null){
+                    sharedPrefManager.setUserProfile6 (response.body ().getResult2 ().getProfile6 ());}
+
+                    else {
+                        Glide.with (getApplicationContext ())
+                            .load (R.drawable.avatar)
+                            .placeholder (R.drawable.avatar)
+                            .centerCrop ()
+                            .into (imageView);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<UpdateProfileResponse> call, Throwable t) {
+
             }
         });
     }

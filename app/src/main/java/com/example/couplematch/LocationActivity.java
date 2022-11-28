@@ -48,7 +48,7 @@ import java.util.Locale;
 
 public class LocationActivity extends AppCompatActivity{
 
-    TextView city;
+    TextView city, Btn_back;
     AppCompatButton Continue_btn;
     EditText location_ET;
     Button Enable_current_location;
@@ -68,10 +68,19 @@ public class LocationActivity extends AppCompatActivity{
         Education = getIntent ().getStringExtra ("Education");
         Professional = getIntent ().getStringExtra ("Professional");
 
+        Btn_back = findViewById (R.id.Btn_back);
         city = findViewById (R.id.city);
         Continue_btn = findViewById (R.id.Continue_btn);
         location_ET = findViewById (R.id.location_ET);
         Enable_current_location = findViewById (R.id.Enable_current_location);
+
+        Btn_back.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (LocationActivity.this, ProfessionalActivity.class);
+                startActivity (i);
+            }
+        });
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient (LocationActivity.this);
 
@@ -118,8 +127,6 @@ public class LocationActivity extends AppCompatActivity{
                 i.putExtra ("Location", location_ET.getText ().toString ());
                 i.putExtra ("City", city.getText ().toString ());
                 startActivity (i);
-
-//                startActivity (new Intent (LocationActivity.this, AboutActivity.class));
             }
         });
     }
@@ -156,7 +163,7 @@ public class LocationActivity extends AppCompatActivity{
                             List<Address> addresses = geocoder.getFromLocation (location.getLatitude (),
                                 location.getLongitude (), 1);
 
-                            location_ET.setText (Html.fromHtml (addresses.get (0).getAddressLine (0)));
+                            location_ET.setText ((addresses.get (0).getAddressLine (0)));
                             city.setText (addresses.get (0).getLocality ());
 
                         } catch (IOException e) {

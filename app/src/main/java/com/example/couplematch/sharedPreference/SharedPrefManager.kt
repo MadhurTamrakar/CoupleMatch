@@ -1,9 +1,9 @@
 package com.example.couplematch.sharedPreference
 
-import android.app.Activity
+import android.content.Context
 import android.content.SharedPreferences
 
-class SharedPrefManager(activity: Activity) {
+class SharedPrefManager(activity: Context) {
 
     private val ID = "Id"
     private val COUNTRYCODE = "CountryCode"

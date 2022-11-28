@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +16,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/ic_baseline_menu_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +25,7 @@
             android:id="@+id/Btn_notification"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/notifications"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +34,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profile_pic"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="320dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +111,21 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView18"
                 app:layout_constraintTop_toBottomOf="@+id/text_name" />
 
+            <TextView
+                android:id="@+id/btn_MorePhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:shadowColor="@color/white"
+                android:clickable="true"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="10"
+                android:text="More +"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -168,187 +181,258 @@
             app:layout_constraintStart_toEndOf="@+id/textView28"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
-        <TextView
-            android:id="@+id/religion_text"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Christian"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/marital_status_text"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-        <TextView
-            android:id="@+id/marital_status_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Unmarried"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Height_text"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/religion_text"
-            app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-        <TextView
-            android:id="@+id/Height_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="5'5"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/marital_status_text"
-            app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-        <TextView
-            android:id="@+id/Diet_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Non-Vegetarian"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/Education_text"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/religion_text" />
+            app:layout_constraintTop_toBottomOf="@+id/UserName">
 
-        <TextView
-            android:id="@+id/Education_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Graduate"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/profession_text"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Diet_text"
-            app:layout_constraintTop_toTopOf="@+id/Diet_text" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/religion" />
 
-        <TextView
-            android:id="@+id/profession_text"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/religion_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:text="Christian"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/marital_status" />
+
+
+            <TextView
+                android:id="@+id/marital_status_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:text="Unmarried"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/height" />
+
+            <TextView
+                android:id="@+id/Height_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:text="5'5"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Private job"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Education_text"
-            app:layout_constraintTop_toTopOf="@+id/Diet_text" />
-
-        <TextView
-            android:id="@+id/live_in_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Downtown"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/drink_text"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Diet_text" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <TextView
-            android:id="@+id/drink_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Never"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/smoke_text"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/live_in_text"
-            app:layout_constraintTop_toTopOf="@+id/live_in_text" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/diet" />
 
-        <TextView
-            android:id="@+id/smoke_text"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/Diet_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="Non-Vegetarian"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/education" />
+
+            <TextView
+                android:id="@+id/Education_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="Graduate"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Occasionally"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/drink_text"
-            app:layout_constraintTop_toTopOf="@+id/live_in_text" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ly2">
 
-        <TextView
-            android:id="@+id/income_text"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/height" />
+
+            <TextView
+                android:id="@+id/profession_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:gravity="center"
+                android:text="Private job"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:id="@+id/live_in_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="Downtown"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/drink" />
+
+            <TextView
+                android:id="@+id/drink_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="Never"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="5.5 lac"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/live_in_text"
-            app:layout_constraintTop_toBottomOf="@+id/live_in_text" />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ly3">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/smoke" />
+
+            <TextView
+                android:id="@+id/smoke_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="Occasionally"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/money" />
+
+            <TextView
+                android:id="@+id/income_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:gravity="center"
+                android:text="5.5 lac"
+                android:textColor="#2196F3"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/about_text"
@@ -364,225 +448,8 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/income_text" />
+            app:layout_constraintTop_toBottomOf="@+id/ly4" />
 
-        <TextView
-            android:id="@+id/about_partner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="About Partner"
-            android:textColor="#2196F3"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about_text" />
-
-        <TextView
-            android:id="@+id/ptn_religion_text"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Hindu + 1 more"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/about_partner"
-            app:layout_constraintTop_toBottomOf="@+id/about_partner" />
-
-        <TextView
-            android:id="@+id/ptn_age_text"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="24-28"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_religion_text"
-            app:layout_constraintTop_toTopOf="@+id/ptn_religion_text" />
-
-        <TextView
-            android:id="@+id/ptn_dosh_text"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Mangalik + 1 more"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_age_text"
-            app:layout_constraintTop_toTopOf="@+id/ptn_age_text" />
-
-        <TextView
-            android:id="@+id/ptn_marital_status_text"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Never Married"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/ptn_religion_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_religion_text" />
-
-        <TextView
-            android:id="@+id/ptn_any_text"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Any"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_marital_status_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_religion_text" />
-
-        <TextView
-            android:id="@+id/ptn_height_text"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="5'8 - 6'2"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_any_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_religion_text" />
-
-        <TextView
-            android:id="@+id/ptn_education_text"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Graduation + 1 more"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_marital_status_text" />
-
-        <TextView
-            android:id="@+id/ptn_profession_text"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="business + 2 more"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_education_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_marital_status_text" />
-
-        <TextView
-            android:id="@+id/ptn_location_text"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Ambala + 100 more"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_education_text" />
-
-        <TextView
-            android:id="@+id/ptn_smoke_text"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="occasionally"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_location_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_education_text" />
-
-        <TextView
-            android:id="@+id/ptn_income_text"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="3.5 - 5.5 lac"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/ptn_location_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_location_text" />
-
-        <TextView
-            android:id="@+id/ptn_status_text"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Working"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_income_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_location_text" />
-
-        <TextView
-            android:id="@+id/ptn_normal_text"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_profile_btn"
-            android:gravity="center"
-            android:text="Normal"
-            android:textColor="#2196F3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/ptn_status_text"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_location_text" />
-
-        <TextView
-            android:id="@+id/about_partner_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/edittext"
-            android:padding="10dp"
-            android:text="I am a simple and practical person with a positive attitude. My beliefs are both modern and traditional. I believe we need to progress and evolve as a society but not lose our traditional moral values"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ptn_normal_text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/connect_btn"
@@ -591,14 +458,14 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="40dp"
-            android:background="@drawable/continue_btn"
+            android:background="@drawable/edit_profile_btn"
             android:text="Connect now"
-            android:textColor="@color/white"
+            android:textColor="@color/blue"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about_partner_text" />
+            app:layout_constraintTop_toBottomOf="@+id/about_text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/block_btn"
@@ -606,9 +473,9 @@
             android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/continue_btn"
+            android:background="@drawable/edit_profile_btn"
             android:text="Block"
-            android:textColor="@color/white"
+            android:textColor="@color/blue"
             app:layout_constraintEnd_toStartOf="@+id/skip_btn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -619,9 +486,9 @@
             android:layout_width="110dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/continue_btn"
+            android:background="@drawable/edit_profile_btn"
             android:text="Skip"
-            android:textColor="@color/white"
+            android:textColor="@color/blue"
             app:layout_constraintEnd_toStartOf="@+id/shortlist_btn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/block_btn"
@@ -633,9 +500,9 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/continue_btn"
+            android:background="@drawable/edit_profile_btn"
             android:text="Shortlist"
-            android:textColor="@color/white"
+            android:textColor="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/skip_btn"

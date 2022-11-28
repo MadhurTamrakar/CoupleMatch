@@ -71,34 +71,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SortListed_me sortListed_me = new SortListed_me ();
                 loadFragments (sortListed_me);
-                sort_listed.setBackgroundResource (R.drawable.btn_clicked);
-                sort_listed.setTextColor (Color.WHITE);
+                sort_listed.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
 
             }
@@ -109,34 +99,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SortListed_by_me sortListed_by_me = new SortListed_by_me ();
                 loadFragments (sortListed_by_me);
-                sort_listed_by_me.setBackgroundResource (R.drawable.btn_clicked);
-                sort_listed_by_me.setTextColor (Color.WHITE);
+                sort_listed_by_me.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -146,34 +126,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ProfileViewer profileViewer = new ProfileViewer ();
                 loadFragments (profileViewer);
-                profile_viewer.setBackgroundResource (R.drawable.btn_clicked);
-                profile_viewer.setTextColor (Color.WHITE);
+                profile_viewer.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -183,34 +153,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ProfileViewedByMe profileViewedByMe = new ProfileViewedByMe ();
                 loadFragments (profileViewedByMe);
-                profile_viewed.setBackgroundResource (R.drawable.btn_clicked);
-                profile_viewed.setTextColor (Color.WHITE);
+                profile_viewed.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -220,34 +180,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RequestSendMeFragment requestSendMeFragment = new RequestSendMeFragment ();
                 loadFragments (requestSendMeFragment);
-                request_send.setBackgroundResource (R.drawable.btn_clicked);
-                request_send.setTextColor (Color.WHITE);
+                request_send.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -257,34 +207,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 RequestByMe requestByMe = new RequestByMe ();
                 loadFragments (requestByMe);
-                request_received.setBackgroundResource (R.drawable.btn_clicked);
-                request_received.setTextColor (Color.WHITE);
+                request_received.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -294,34 +234,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AcceptedByUserFragment acceptedByUserFragment = new AcceptedByUserFragment ();
                 loadFragments (acceptedByUserFragment);
-                request_accept_by_user.setBackgroundResource (R.drawable.btn_clicked);
-                request_accept_by_user.setTextColor (Color.WHITE);
+                request_accept_by_user.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -331,34 +261,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AcceptedByMeFragment acceptedByMeFragment = new AcceptedByMeFragment ();
                 loadFragments (acceptedByMeFragment);
-                request_accept_by_me.setBackgroundResource (R.drawable.btn_clicked);
-                request_accept_by_me.setTextColor (Color.WHITE);
+                request_accept_by_me.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -368,34 +288,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 CancelByUserFragment cancelByUserFragment = new CancelByUserFragment ();
                 loadFragments (cancelByUserFragment);
-                request_cancel_user.setBackgroundResource (R.drawable.btn_clicked);
-                request_cancel_user.setTextColor (Color.WHITE);
+                request_cancel_user.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_me.setTextColor (Color.BLACK);
             }
         });
@@ -405,34 +315,24 @@ public class ProfileViewedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 CancelByMeFragment cancelByMeFragment= new CancelByMeFragment ();
                 loadFragments (cancelByMeFragment);
-                request_cancel_me.setBackgroundResource (R.drawable.btn_clicked);
-                request_cancel_me.setTextColor (Color.WHITE);
+                request_cancel_me.setTextColor (Color.parseColor("#2196F3"));
 
-                sort_listed.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed.setTextColor (Color.BLACK);
 
-                sort_listed_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 sort_listed_by_me.setTextColor (Color.BLACK);
 
-                profile_viewer.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewer.setTextColor (Color.BLACK);
 
-                profile_viewed.setBackgroundResource (R.drawable.edit_profile_btn);
                 profile_viewed.setTextColor (Color.BLACK);
 
-                request_send.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_send.setTextColor (Color.BLACK);
 
-                request_received.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_received.setTextColor (Color.BLACK);
 
-                request_accept_by_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_user.setTextColor (Color.BLACK);
 
-                request_accept_by_me.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_accept_by_me.setTextColor (Color.BLACK);
 
-                request_cancel_user.setBackgroundResource (R.drawable.edit_profile_btn);
                 request_cancel_user.setTextColor (Color.BLACK);
             }
         });

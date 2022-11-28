@@ -76,8 +76,8 @@ public class DeleteMyAccountActivity extends AppCompatActivity {
 //                    finish ();
                 switch (view.getId ()) {
                     case R.id.btn_yes:
-                        DeleteUser (user_id);
                         signOut ();
+                        DeleteUser (user_id);
                         break;
                 }
             }
@@ -97,9 +97,11 @@ public class DeleteMyAccountActivity extends AppCompatActivity {
             .addOnCompleteListener (this, new OnCompleteListener<Void> () {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
+                    finish ();
                     Intent i = new Intent (DeleteMyAccountActivity.this, HomeActivity.class);
                     startActivity (i);
                     finish ();
+
                 }
             });
     }

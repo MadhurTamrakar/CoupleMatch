@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPrefManager sharedPrefManager;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager LayoutManager;
-    TextView Btn_menu, Btn_notification;
+    TextView Btn_menu, Btn_notification, tv_total_profile;
     Adapter adapter;
     private long pressedTime;
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         Btn_notification = findViewById (R.id.Btn_notification);
         Btn_menu = findViewById (R.id.Btn_menu);
+        tv_total_profile = findViewById (R.id.tv_total_profile);
 
         Btn_notification.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful ()) {
                     if(response.body ().getResult3 () != null) {
                         progressDialog.dismiss ();
+                        tv_total_profile.setText (String.valueOf(response.body ().getTotal ()));
                         recyclerView = findViewById (R.id.recyclerView);
                         LayoutManager = new GridLayoutManager (getApplicationContext (), 2);
                         recyclerView.setLayoutManager (LayoutManager);
