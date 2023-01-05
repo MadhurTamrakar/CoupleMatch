@@ -164,11 +164,6 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity (new Intent (MenuActivity.this, DeleteMyAccountActivity.class));
-//                switch (v.getId ()) {
-//                    case R.id.delete_account_btn:
-//                        signOut ();
-//                        break;
-//                }
             }
         });
         btn_Help_support.setOnClickListener (new View.OnClickListener () {
@@ -193,6 +188,9 @@ public class MenuActivity extends AppCompatActivity {
                         signOut ();
                         break;
                 }
+                finish ();
+                Intent i = new Intent (MenuActivity.this, HomeActivity.class);
+                startActivity (i);
             }
         });
     }
@@ -276,9 +274,9 @@ public class MenuActivity extends AppCompatActivity {
             .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
+                    finish ();
                     Intent i = new Intent (MenuActivity.this, HomeActivity.class);
                     startActivity (i);
-                    finish ();
                 }
             });
     }

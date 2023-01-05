@@ -122,7 +122,7 @@ public class SortListed_me extends Fragment {
                     } else {
                         progressDialog.dismiss ();
 //                        Toast.makeText (getActivity (), "No Content", Toast.LENGTH_SHORT).show ();
-                        textData.setText ("No One Sort Listed You");
+                        textData.setText ("No One Shortlisted You");
                     }
                 }
             }

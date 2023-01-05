@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
     AppCompatButton connect_btn, block_btn, skip_btn, shortlist_btn;
     SharedPrefManager sharedPrefManager;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -83,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
         smoke_text = findViewById (R.id.smoke_text);
         income_text = findViewById (R.id.income_text);
         about_text = findViewById (R.id.about_text);
-        about_partner_text = findViewById (R.id.about_partner_text);
+//        about_partner_text = findViewById (R.id.about_partner_text);
         connect_btn = findViewById (R.id.connect_btn);
         block_btn = findViewById (R.id.block_btn);
         skip_btn = findViewById (R.id.skip_btn);

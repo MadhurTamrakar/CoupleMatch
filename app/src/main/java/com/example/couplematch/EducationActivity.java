@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -47,141 +48,181 @@ public class EducationActivity extends AppCompatActivity {
         btn_No_education.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","No Education");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_No_education.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","No Education");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Secondary.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Secondary");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Secondary.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Secondary");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Senior_Secondary.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Senior Secondary");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Senior_Secondary.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Senior Secondary");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Graduation.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Graduation");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Graduation.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Graduation");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Post_Graduation.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Post Graduation");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Post_Graduation.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Post Graduation");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Bed.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","B.Ed");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Bed.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","B.Ed");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Mphil.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","M.phil");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Mphil.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","M.phil");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Phd.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Phd");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_Phd.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Phd");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_MBBS.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","MBBS");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_MBBS.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","MBBS");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_other.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Education","Other");
-                startActivity (i);
-//                startActivity (new Intent (EducationActivity.this, ProfessionalActivity.class));
+                btn_other.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (EducationActivity.this, ProfessionalActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Education","Other");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 

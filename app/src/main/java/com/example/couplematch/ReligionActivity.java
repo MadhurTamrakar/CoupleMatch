@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -41,91 +42,132 @@ public class ReligionActivity extends AppCompatActivity {
         btn_hindu.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, DoshActivity.class);
-                i.putExtra ("Religion","Hindu");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, DoshActivity.class));
+                btn_hindu.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, DoshActivity.class);
+                        i.putExtra ("Religion", "Hindu");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_muslim.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Muslim");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_muslim.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Muslim");
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_sikh.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Sikh");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_sikh.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Sikh");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_christian.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Christian");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_christian.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Christian");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_buddhist.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Buddhist");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_buddhist.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Buddhist");
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_jewish.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Jewish");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_jewish.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Jewish");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_parsi.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Parsi");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_parsi.setBackgroundResource (R.drawable.edit_profile_btn);
+
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Parsi");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_atheist.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Atheist");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_atheist.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Atheist");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_non_religious.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Non Religious");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_non_religious.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Non Religious");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_other.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
-                i.putExtra ("Religion","Other");
-                startActivity (i);
-//                startActivity (new Intent (ReligionActivity.this, MaritalStatusActivity.class));
+                btn_other.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (ReligionActivity.this, MaritalStatusActivity.class);
+                        i.putExtra ("Religion", "Other");
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
 

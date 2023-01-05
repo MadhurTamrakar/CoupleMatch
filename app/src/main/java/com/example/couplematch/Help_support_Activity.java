@@ -107,9 +107,9 @@ public class Help_support_Activity extends AppCompatActivity {
     }
 
     public void messagePopUp(View v) {
-        TextView textClose;
+//        TextView textClose;
         message.setContentView (R.layout.message_sent_popup);
-        textClose = (TextView) message.findViewById (R.id.textClose);
+//        textClose = (TextView) message.findViewById (R.id.textClose);
         String user_id = sharedPrefManager.getId ();
         String email = ed_mail.getText ().toString ();
         String Message = ed_message.getText ().toString ();
@@ -119,13 +119,13 @@ public class Help_support_Activity extends AppCompatActivity {
         message.getWindow ().setBackgroundDrawable (new ColorDrawable (Color.TRANSPARENT));
         message.show ();
 
-        textClose.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View view) {
-                message.dismiss ();
-                ed_message.setText ("");
-            }
-        });
+//        textClose.setOnClickListener (new View.OnClickListener () {
+//            @Override
+//            public void onClick(View view) {
+//                message.dismiss ();
+//                ed_message.setText ("");
+//            }
+//        });
     }
 
     private void Help_Support(String user_id, String email, String message) {

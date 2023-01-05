@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -48,110 +49,142 @@ public class SavedSmoke extends AppCompatActivity {
         any.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","any");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                any.setBackgroundResource (R.drawable.edit_profile_btn); btn_Occasionally.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_Regular.setBackgroundResource (R.drawable.edit_profile_btn); btn_zero_Tolerance.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_Definitely.setBackgroundResource (R.drawable.edit_profile_btn); btn_Never.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","any");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
 
         btn_Occasionally.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","Occasionally");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_Occasionally.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","Occasionally");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_Regular.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","Regular");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_Regular.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","Regular");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_zero_Tolerance.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","Zero Tolerance");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_zero_Tolerance.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","Zero Tolerance");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_Definitely.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","Definitely");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_Definitely.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","Definitely");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
         btn_Never.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
-                i.putExtra ("Smoke","Never");
-                i.putExtra ("Drink", Drink);
-                i.putExtra ("Income", Income);
-                i.putExtra ("Profession", Profession);
-                i.putExtra ("Education", Education);
-                i.putExtra ("Height", Height);
-                i.putExtra ("Diet", Diet);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_Never.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedSmoke.this, SavedPhysicalStatus.class);
+                        i.putExtra ("Smoke","Never");
+                        i.putExtra ("Drink", Drink);
+                        i.putExtra ("Income", Income);
+                        i.putExtra ("Profession", Profession);
+                        i.putExtra ("Education", Education);
+                        i.putExtra ("Height", Height);
+                        i.putExtra ("Diet", Diet);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                }, 800);
             }
         });
     }

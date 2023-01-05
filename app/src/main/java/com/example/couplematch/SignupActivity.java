@@ -78,6 +78,7 @@ public class SignupActivity extends AppCompatActivity {
         Btn_back.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
+                finish ();
                 startActivity (new Intent (SignupActivity.this, HomeActivity.class));
             }
         });
@@ -112,17 +113,24 @@ public class SignupActivity extends AppCompatActivity {
 
                 int selectedId = radioGroup.getCheckedRadioButtonId ();
                 radioButton = (RadioButton) findViewById (selectedId);
-                gender = radioButton.getText ().toString ();
 
-                sharedPrefManager.setUserGender (gender);
 
                 if (name.isEmpty ()) {
                     editText.setError ("Please Enter Your Name");
                     editText.requestFocus ();
-                } else if (mobile.length () < 10) {
+                } else if (mobile.isEmpty ()) {
                     ed_number.setError ("Please Enter Mobile Number");
                     ed_number.requestFocus ();
+                } else if (mobile.length () < 10) {
+                    ed_number.setError ("Please Enter Valid Mobile Number");
+                    ed_number.requestFocus ();
+                } else if (radioGroup.getCheckedRadioButtonId () == -1) {
+                    Toast.makeText (SignupActivity.this, "Please Select Your Gender", Toast.LENGTH_SHORT).show ();
+                } else if (dob.isEmpty ()){
+                    Toast.makeText (SignupActivity.this, "Please Select Your Date Of Birth", Toast.LENGTH_SHORT).show ();
                 } else {
+                    gender = radioButton.getText ().toString ();
+                    sharedPrefManager.setUserGender (gender);
                     registerUser (name, mobile, gender, dob, age);
                 }
 
@@ -180,6 +188,7 @@ public class SignupActivity extends AppCompatActivity {
                 tv_age.setText (Integer.toString (calculateAge (c.getTimeInMillis ())));
             }
         };
+        radioGroup = (RadioGroup) findViewById (R.id.radio);
 
         radioMale = findViewById (R.id.radioMale);
         radioFemale = findViewById (R.id.radioFemale);
@@ -193,6 +202,7 @@ public class SignupActivity extends AppCompatActivity {
 
         datePickerDialog = new DatePickerDialog (this, style, dateSetListener, year, month, day);
         datePickerDialog.getDatePicker ().setMaxDate (System.currentTimeMillis () - 568025136000L);
+
 
 //...........Calculate age less x no. (1000 * 60 * 60 * 24 * 365.25 * min age)..................\\
 

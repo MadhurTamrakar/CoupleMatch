@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,13 +43,24 @@ public class SavedDiet extends AppCompatActivity {
         any.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "any");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                any.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_veg.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_Non_VEG.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_OCCASIONALLY.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_EGGITARIAN.setBackgroundResource (R.drawable.edit_profile_btn);
+                Btn_NEVER.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "any");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });
@@ -56,13 +68,19 @@ public class SavedDiet extends AppCompatActivity {
         btn_veg.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "Veg");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_veg.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "Veg");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });
@@ -70,13 +88,19 @@ public class SavedDiet extends AppCompatActivity {
         btn_Non_VEG.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "Non Veg");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_Non_VEG.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "Non Veg");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });
@@ -84,13 +108,19 @@ public class SavedDiet extends AppCompatActivity {
         btn_OCCASIONALLY.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "Occasionally Non Veg");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_OCCASIONALLY.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "Occasionally Non Veg");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });
@@ -98,13 +128,19 @@ public class SavedDiet extends AppCompatActivity {
         btn_EGGITARIAN.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "Eggitarian");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                btn_EGGITARIAN.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "Eggitarian");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });
@@ -112,13 +148,19 @@ public class SavedDiet extends AppCompatActivity {
         Btn_NEVER.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDiet.this, SavedHeight.class);
-                i.putExtra ("Diet", "Never use Onion");
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
+                Btn_NEVER.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDiet.this, SavedHeight.class);
+                        i.putExtra ("Diet", "Never use Onion");
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
+
 //                startActivity (new Intent (SavedDiet.this, SavedHeight.class));
             }
         });

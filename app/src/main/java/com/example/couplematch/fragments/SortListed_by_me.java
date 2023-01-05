@@ -110,7 +110,7 @@ public class SortListed_by_me extends Fragment {
                     } else {
                         progressDialog.dismiss ();
 //                        Toast.makeText (getActivity (), "No Content", Toast.LENGTH_SHORT).show ();
-                        textData.setText ("No Profile Got Sort Listed");
+                        textData.setText ("No Profile Got Shortlisted ");
                     }
                 }
             }

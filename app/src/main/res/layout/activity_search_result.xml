@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:text="Search ID -"
+        android:text="Search Profile ID -"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="normal"
@@ -58,18 +58,18 @@
         android:ems="10"
         android:textSize="15sp"
         android:inputType="text"
-        android:hint="id"
+        android:hint="Profile id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/searchById_btn"
-        android:layout_width="120dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@drawable/edit_profile_btn"
-        android:text="Search By ID"
+        android:text="Search By Profile ID"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="11sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="@+id/ed_id"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
 
@@ -185,7 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -230,7 +230,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -275,7 +275,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -320,7 +320,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -365,7 +365,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -410,7 +410,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -455,7 +455,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -500,7 +500,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -546,7 +546,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -591,7 +591,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -636,7 +636,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:gravity="end"
-            android:text="ADD >"
+            android:text="ADD"
             android:textColor="@color/black"
             android:textSize="15sp"/>
     </LinearLayout>

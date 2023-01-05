@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -40,68 +41,98 @@ public class SavedDosh extends AppCompatActivity {
         any.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "any");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                any.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_Manglik.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_Non_Manglik.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_ANSHIK_MANGLIK.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_doNotKnow.setBackgroundResource (R.drawable.edit_profile_btn);
+                doNotBelieve.setBackgroundResource (R.drawable.edit_profile_btn);
+
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "any");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_Manglik.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "Manglik");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                btn_Manglik.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "Manglik");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_Non_Manglik.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "Non Manglik");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                btn_Non_Manglik.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "Non Manglik");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_ANSHIK_MANGLIK.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "Anshik Manglik");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                btn_ANSHIK_MANGLIK.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "Anshik Manglik");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         btn_doNotKnow.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "Don,t know");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                btn_doNotKnow.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "Don,t know");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
         doNotBelieve.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
-                i.putExtra ("Dosh", "Do Not Believe");
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedDosh.this, SavedMaritalStatus.class));
+                doNotBelieve.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedDosh.this, SavedMaritalStatus.class);
+                        i.putExtra ("Dosh", "Do Not Believe");
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
     }

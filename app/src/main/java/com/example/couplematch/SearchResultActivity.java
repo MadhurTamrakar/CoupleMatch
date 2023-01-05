@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class SearchResultActivity extends AppCompatActivity {
     SharedPreference sharedPreference;
     SharedPrefManager sharedPrefManager;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -63,18 +65,79 @@ public class SearchResultActivity extends AppCompatActivity {
         ed_id = findViewById (R.id.ed_id);
         search_btn = findViewById (R.id.search_btn);
 
-        age.setText (sharedPreference.getAge ());
-        religion.setText (sharedPreference.getReligion ());
-        dosh.setText (sharedPreference.getDosh ());
-        marital_status.setText (sharedPreference.getMaritalStatus ());
-        Diet.setText (sharedPreference.getDiet ());
-        height.setText (sharedPreference.getHeight ());
-        education.setText (sharedPreference.getEducation ());
-        profession.setText (sharedPreference.getProfession ());
-        income.setText (sharedPreference.getIncome ());
-        drink.setText (sharedPreference.getDrink ());
-        smoke.setText (sharedPreference.getSmoke ());
-        physical_status.setText (sharedPreference.getPhysicalStatus ());
+        if (sharedPreference.getAge () != null) {
+//            age.setText ("Add >");
+            age.setText (sharedPreference.getAge ());
+        }
+
+        if (sharedPreference.getReligion () != null) {
+//            religion.setText ("Add >");
+            religion.setText (sharedPreference.getReligion ());
+        }
+
+        if (sharedPreference.getDosh () != null) {
+//            dosh.setText ("Add >");
+            dosh.setText (sharedPreference.getDosh ());
+        }
+
+        if (sharedPreference.getMaritalStatus () != null) {
+//            marital_status.setText ("Add >");
+            marital_status.setText (sharedPreference.getMaritalStatus ());
+        }
+
+        if (sharedPreference.getDiet () != null) {
+//            Diet.setText ("Add >");
+            Diet.setText (sharedPreference.getDiet ());
+        }
+
+        if (sharedPreference.getHeight () != null) {
+//            height.setText ("Add >");
+            height.setText (sharedPreference.getHeight ());
+        }
+
+        if (sharedPreference.getEducation () != null) {
+//            education.setText ("Add >");
+            education.setText (sharedPreference.getEducation ());
+        }
+
+        if (sharedPreference.getProfession () != null) {
+//            profession.setText ("Add >");
+            profession.setText (sharedPreference.getProfession ());
+        }
+
+        if (sharedPreference.getIncome () != null) {
+//            income.setText ("Add >");
+            income.setText (sharedPreference.getIncome ());
+        }
+
+        if (sharedPreference.getDrink () != null) {
+//            drink.setText ("Add >");
+            drink.setText (sharedPreference.getDrink ());
+        }
+
+        if (sharedPreference.getSmoke () != null) {
+//            smoke.setText ("Add >");
+            smoke.setText (sharedPreference.getSmoke ());
+        }
+
+        if (sharedPreference.getPhysicalStatus () != null) {
+//            physical_status.setText ("Add >");
+            physical_status.setText (sharedPreference.getPhysicalStatus ());
+        }
+
+
+//        age.setText (sharedPreference.getAge ());
+//        religion.setText (sharedPreference.getReligion ());
+//        dosh.setText (sharedPreference.getDosh ());
+//        marital_status.setText (sharedPreference.getMaritalStatus ());
+//        Diet.setText (sharedPreference.getDiet ());
+//        height.setText (sharedPreference.getHeight ());
+//        education.setText (sharedPreference.getEducation ());
+//        profession.setText (sharedPreference.getProfession ());
+//        income.setText (sharedPreference.getIncome ());
+//        drink.setText (sharedPreference.getDrink ());
+//        smoke.setText (sharedPreference.getSmoke ());
+//        physical_status.setText (sharedPreference.getPhysicalStatus ());
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -87,9 +150,9 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String user_code = ed_id.getText ().toString ();
-                if(user_code.isEmpty ()){
-                    ed_id.setError ("Enter User ID");
-                }else{
+                if (user_code.isEmpty ()) {
+                    ed_id.setError ("Please Enter Profile ID");
+                } else {
                     GetUser (user_code);
                 }
             }
@@ -116,8 +179,6 @@ public class SearchResultActivity extends AppCompatActivity {
 //                String Physical_status = physical_status.getText ().toString ();
 
 //                    PartnerPreference(gender, Age, Religion, Dosh, Marital_status, diet, Height, Education, Profession, Drink, Smoke, Physical_status);
-
-
             }
         });
     }
@@ -150,6 +211,7 @@ public class SearchResultActivity extends AppCompatActivity {
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<UniqueUserData> call, Throwable t) {
 

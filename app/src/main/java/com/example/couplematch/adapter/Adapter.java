@@ -61,8 +61,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         View view = LayoutInflater.from (parent.getContext ()).inflate (R.layout.card_gride_layout, null);
         Adapter.ViewHolder viewHolder = new Adapter.ViewHolder (view);
         return viewHolder;
-
-
     }
 
     @SuppressLint("CheckResult")
@@ -71,50 +69,50 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         final Result3 temp = userData.get (position);
 
-        String location = sharedPrefManager.getUserCity ();
-        String LocationB = userData.get (0).getCity ();
-        Geocoder gc = new Geocoder(context);
-
-        try {
-            List<Address> addresses= gc.getFromLocationName(location, 5);
-            List<Address> addressesB= gc.getFromLocationName(LocationB, 5);
-
-            List<LatLng> ll = new ArrayList<LatLng>(addresses.size());
-            List<LatLng> llB = new ArrayList<LatLng>(addressesB.size());
-
-            for(Address a : addresses){
-                if(a.hasLatitude() && a.hasLongitude()){
-                    ll.add(new LatLng(a.getLatitude(), a.getLongitude()));
-                    Location locationA = new Location ("AddressA");
-                    locationA.setLatitude (a.getLatitude ());
-                    locationA.setLongitude (a.getLongitude ());
-                    sharePre.setlatA (String.valueOf (a.getLatitude ()));
-                    sharePre.setlngA (String.valueOf (a.getLongitude ()));
-                }
-            }
-            for(Address b : addressesB){
-                if(b.hasLatitude() && b.hasLongitude()){
-                    llB.add(new LatLng(b.getLatitude(), b.getLongitude()));
-                    Location locationB = new Location ("AddressB");
-                    locationB.setLatitude (b.getLatitude ());
-                    locationB.setLongitude (b.getLongitude ());
-                    sharePre.setlatB (String.valueOf (b.getLatitude ()));
-                    sharePre.setlngB (String.valueOf (b.getLongitude ()));
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace ();
-        }
-
-        Location locationA = new Location ("AddressA");
-        locationA.setLatitude (Double.parseDouble(sharePre.getlatA ()));
-        locationA.setLongitude (Double.parseDouble(sharePre.getlngA ()));
-
-        Location locationB = new Location ("AddressB");
-        locationB.setLatitude (Double.parseDouble(sharePre.getlatB ()));
-        locationB.setLongitude (Double.parseDouble(sharePre.getlngB ()));
-
-        float distance = locationA.distanceTo (locationB);
+//        String location = sharedPrefManager.getUserCity ();
+//        String LocationB = userData.get (0).getCity ();
+//        Geocoder gc = new Geocoder(context);
+//
+//        try {
+//            List<Address> addresses= gc.getFromLocationName(location, 5);
+//            List<Address> addressesB= gc.getFromLocationName(LocationB, 5);
+//
+//            List<LatLng> ll = new ArrayList<LatLng>(addresses.size());
+//            List<LatLng> llB = new ArrayList<LatLng>(addressesB.size());
+//
+//            for(Address a : addresses){
+//                if(a.hasLatitude() && a.hasLongitude()){
+//                    ll.add(new LatLng(a.getLatitude(), a.getLongitude()));
+//                    Location locationA = new Location ("AddressA");
+//                    locationA.setLatitude (a.getLatitude ());
+//                    locationA.setLongitude (a.getLongitude ());
+//                    sharePre.setlatA (String.valueOf (a.getLatitude ()));
+//                    sharePre.setlngA (String.valueOf (a.getLongitude ()));
+//                }
+//            }
+//            for(Address b : addressesB){
+//                if(b.hasLatitude() && b.hasLongitude()){
+//                    llB.add(new LatLng(b.getLatitude(), b.getLongitude()));
+//                    Location locationB = new Location ("AddressB");
+//                    locationB.setLatitude (b.getLatitude ());
+//                    locationB.setLongitude (b.getLongitude ());
+//                    sharePre.setlatB (String.valueOf (b.getLatitude ()));
+//                    sharePre.setlngB (String.valueOf (b.getLongitude ()));
+//                }
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace ();
+//        }
+//
+//        Location locationA = new Location ("AddressA");
+//        locationA.setLatitude (Double.parseDouble(sharePre.getlatA ()));
+//        locationA.setLongitude (Double.parseDouble(sharePre.getlngA ()));
+//
+//        Location locationB = new Location ("AddressB");
+//        locationB.setLatitude (Double.parseDouble(sharePre.getlatB ()));
+//        locationB.setLongitude (Double.parseDouble(sharePre.getlngB ()));
+//
+//        float distance = locationA.distanceTo (locationB);
 
 //        holder.tv_distance.setText(String.valueOf (distance));
         holder.tv_name.setText (userData.get (position).getShortName ());

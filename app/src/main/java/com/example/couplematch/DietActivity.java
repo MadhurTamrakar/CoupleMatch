@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,65 +43,85 @@ public class DietActivity extends AppCompatActivity {
         btn_veg.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (DietActivity.this, HeightActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", "Veg");
-                startActivity (i);
-//                startActivity (new Intent (DietActivity.this, HeightActivity.class));
+                btn_veg.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (DietActivity.this, HeightActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", "Veg");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_Non_VEG.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (DietActivity.this, HeightActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", "Non Veg");
-                startActivity (i);
-//                startActivity (new Intent (DietActivity.this, HeightActivity.class));
+                btn_Non_VEG.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (DietActivity.this, HeightActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", "Non Veg");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_OCCASIONALLY.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (DietActivity.this, HeightActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", "Occasionally Non Veg");
-                startActivity (i);
-//                startActivity (new Intent (DietActivity.this, HeightActivity.class));
+                btn_OCCASIONALLY.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (DietActivity.this, HeightActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", "Occasionally Non Veg");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_EGGITARIAN.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (DietActivity.this, HeightActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", "Eggitarian");
-                startActivity (i);
-//                startActivity (new Intent (DietActivity.this, HeightActivity.class));
+                btn_EGGITARIAN.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (DietActivity.this, HeightActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", "Eggitarian");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         Btn_NEVER.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (DietActivity.this, HeightActivity.class);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("MaritalStatus", MaritalStatus);
-                i.putExtra ("Diet", "Never use Onion");
-                startActivity (i);
-//                startActivity (new Intent (DietActivity.this, HeightActivity.class));
+                Btn_NEVER.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (DietActivity.this, HeightActivity.class);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("MaritalStatus", MaritalStatus);
+                        i.putExtra ("Diet", "Never use Onion");
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
     }

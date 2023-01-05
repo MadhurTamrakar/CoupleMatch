@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -45,130 +46,179 @@ public class SavedMaritalStatus extends AppCompatActivity {
         any.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "any");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                any.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_unmarried.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_divorced.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_DIVORCED.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_WIDOWED.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_WIDOWED_WITH_CHILDREN.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_ANNULLED.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_SEPARATED.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_MARRIED.setBackgroundResource (R.drawable.edit_profile_btn);
+                btn_AWAITING.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "any");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_unmarried.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Unmarried");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_unmarried.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Unmarried");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_divorced.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Divorced");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_divorced.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Divorced");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_DIVORCED.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Divorced With Children");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_DIVORCED.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Divorced With Children");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_WIDOWED.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Widow");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_WIDOWED.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Widow");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_WIDOWED_WITH_CHILDREN.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Widow With Children");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_WIDOWED_WITH_CHILDREN.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Widow With Children");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_ANNULLED.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Annulled");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_ANNULLED.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Annulled");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_SEPARATED.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Separated");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_SEPARATED.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Separated");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_MARRIED.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Married");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_MARRIED.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Married");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 
         btn_AWAITING.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
-                i.putExtra ("MaritalStatus", "Awaiting");
-                i.putExtra ("Dosh", Dosh);
-                i.putExtra ("Religion", Religion);
-                i.putExtra ("Age", Age);
-                startActivity (i);
-//                startActivity (new Intent (SavedMaritalStatus.this, SavedDiet.class));
+                btn_AWAITING.setBackgroundResource (R.drawable.edit_profile_btn);
+                new Handler ().postDelayed (new Runnable () {
+                    public void run() {
+                        Intent i = new Intent (SavedMaritalStatus.this, SavedDiet.class);
+                        i.putExtra ("MaritalStatus", "Awaiting");
+                        i.putExtra ("Dosh", Dosh);
+                        i.putExtra ("Religion", Religion);
+                        i.putExtra ("Age", Age);
+                        startActivity (i);
+                    }
+                },  800);
             }
         });
 

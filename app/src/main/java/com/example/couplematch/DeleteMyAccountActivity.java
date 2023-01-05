@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,8 @@ public class DeleteMyAccountActivity extends AppCompatActivity {
     Dialog logoutPopup;
     SharedPrefManager sharedPrefManager;
     GoogleSignInClient mGoogleSignInClient;
+    AppCompatButton Delete_btn;
+    EditText editText3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +52,26 @@ public class DeleteMyAccountActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient (this, gso);
 
         Btn_back = findViewById (R.id.Btn_back);
+        Delete_btn = findViewById (R.id.Delete_btn);
+        editText3 = findViewById (R.id.editText3);
         logoutPopup = new Dialog (this);
 
         Btn_back.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
                 startActivity (new Intent (DeleteMyAccountActivity.this, MenuActivity.class));
+            }
+        });
+
+        Delete_btn.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                if(editText3.getText ().toString ().isEmpty ()){
+                    Toast.makeText (DeleteMyAccountActivity.this, "Please Enter The Reason", Toast.LENGTH_SHORT).show ();
+                }else {
+                    deletePopUp(v);
+                }
+
             }
         });
     }
@@ -100,7 +117,6 @@ public class DeleteMyAccountActivity extends AppCompatActivity {
                     finish ();
                     Intent i = new Intent (DeleteMyAccountActivity.this, HomeActivity.class);
                     startActivity (i);
-                    finish ();
 
                 }
             });
